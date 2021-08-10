@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :services
-  has_many :categories         
+  has_many :bookings
+  enum user_type: [:customer, :supplier]        
 end
