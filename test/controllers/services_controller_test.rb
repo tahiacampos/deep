@@ -6,4 +6,19 @@ class ServicesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get show" do
+    get services_show_url
+    assert_response :success
+  end
+
+  test "should get edit" do
+    get services_edit_url
+    assert_response :success
+  end
+
+  test "should get new" do
+    get services_new_url
+    assert_response :success
+  end
+
 end
