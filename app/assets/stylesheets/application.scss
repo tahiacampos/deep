@@ -11,3 +11,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+//Generales
+
+.sticky-bottom{
+  display: table-cell;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 1.6em;
+  left: 90vw;
+  background-color: yellow;
+  height: 3em;
+  font-size: 20px;
+}
