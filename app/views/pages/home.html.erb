@@ -98,32 +98,8 @@
 </div>
 </div>
 <hr>
-<div class="container"><h6 class="text-left">Lo más visto</h6></div>
-<div class="container">
-<div class="card-group">
-  <div class="card col-3">
-    <img src="assets/desinfeccion.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Desinfección</h5>
-    </div>
-  </div>
-  <div class="card col-3">
-    <img src="assets/limpieza.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Limpieza</h5>
-    </div>
-  </div>
-  <div class="card col-3">
-    <img src="assets/mantenimiento.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Mantenimiento</h5>
-    </div>
-  </div>
-  <div class="card col-3">
-    <img src="assets/mantenimiento.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Mantenimiento</h5>
-    </div>
-  </div>
-</div>
+<div class="containner">
+  <%= @service.each do |servicio| %>
+    <h3> <%= servicio.title %> </h3>
+  <% end %>
 </div>
