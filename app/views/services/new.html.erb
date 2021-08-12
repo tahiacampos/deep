@@ -7,7 +7,8 @@
         <%= f.input :descripcion %>
         <%= f.input :tarifa %>
         <%= f.input :tiempo_ejecucion %>
-        <%= f.input :category, label: "Categoría", collection: Service::CATEGORIES %>
+        <!--<%= f.input :category, label: "Categoría", collection: Service::CATEGORIES %>-->
+        <%= f.association :category, label_method: :category, prompt: "Elije una categoria"  %>
         <!--<%= f.submit class: 'btn btn-primary' %>-->
         <%= f.button :button do %>
         <i class="icon-save"></i>
