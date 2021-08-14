@@ -3,15 +3,24 @@ class ServicesController < ApplicationController
 
   def index
     @service = Service.all
+    @category = Category.all
   end
 
   def show
+    @service = Service.find(params[:id])
   end
 
   def new
+    @service = Service.new
   end
 
   def create
+    @service = Service.new(service_params)
+    if @service.save
+      redirect_to service_path(@service)
+    else
+      render "new"
+    end
   end
 
   def edit
@@ -21,5 +30,11 @@ class ServicesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def service_params
+    params.require(:service).permit(:title, :descripcion, :tarifa, :tiempo_ejecucion)
   end
 end
