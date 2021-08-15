@@ -13,14 +13,16 @@
 @import "pages/index";
 
 //Generales
+@import "mapbox-gl/dist/mapbox-gl";
 
 .sticky-bottom{
-  display: table-cell;
+  
   position: -webkit-sticky;
   position: sticky;
   bottom: 1.6em;
   left: 90vw;
-  background-color: yellow;
+  background-color: #FFB902;
   height: 3em;
+  width: 3em;
   font-size: 20px;
 }
