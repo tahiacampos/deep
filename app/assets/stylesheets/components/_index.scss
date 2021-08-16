@@ -4,35 +4,55 @@
 @import "navbar";
 @import "map";
 
-.card-product {
-    overflow: hidden;
-    height: 120px;
-    background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-category {
+    background-size: cover;
+    background-position: center;
+    height: 180px;
     display: flex;
+    justify-content: center;
     align-items: center;
-  }
-  
-  .card-product img {
-    height: 100%;
-    width: 120px;
-    object-fit: cover;
-  }
-  
-  .card-product h2 {
-    font-size: 16px;
+    color: white;
+    font-size: 24px;
     font-weight: bold;
-    margin: 0;
-  }
-  
-  .card-product p {
-    font-size: 12px;
-    line-height: 1.4;
-    opacity: .7;
-    margin-bottom: 0;
-    margin-top: 8px;
-  }
-  
-  .card-product .card-product-infos {
-    padding: 16px;
-  }
+    border-radius: 5px;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  border-radius: 10px;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #FFBA00;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #7B438C;
+  color: white;
+}
