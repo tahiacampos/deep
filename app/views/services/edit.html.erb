@@ -5,8 +5,8 @@
       <%= simple_form_for @service do |f| %>
         <%= f.input :title, label: "Titulo" %>
         <%= f.input :descripcion %>
-        <%= f.input :tarifa %>
-        <%= f.input :tiempo_ejecucion %>
+        <%= f.input :price %>
+        <%= f.input :execution_time %>
         <!--<%= f.input :category, label: "Categoría", collection: Service::CATEGORIES %>-->
         <%= f.association :category, label: "Categoría", label_method: :category, prompt: "Elije una categoria"  %>
         <!--<%= f.submit class: 'btn btn-primary' %>-->
