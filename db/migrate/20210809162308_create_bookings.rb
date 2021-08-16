@@ -1,9 +1,8 @@
 class CreateBookings < ActiveRecord::Migration[6.0]
   def change
     create_table :bookings do |t|
-      t.date :fecha
-      t.string :forma_pago
-      t.string :finalizado
+      t.string :payment_method
+      t.string :finished
       t.references :service, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
 
