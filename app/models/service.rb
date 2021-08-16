@@ -4,5 +4,5 @@ class Service < ApplicationRecord
   # CATEGORIES = Category.all
   validates :title, :description, presence: :true
   # validates :category, inclusion: { in: CATEGORIES }
-  
+ 
 end
