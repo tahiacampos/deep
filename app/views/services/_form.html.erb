@@ -1,20 +1,13 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>Publica un nuevo Servicio</h1>
       <%= simple_form_for @service do |f| %>
         <%= f.input :title, label: "Titulo" %>
         <%= f.input :descripcion %>
         <%= f.input :tarifa %>
         <%= f.input :tiempo_ejecucion %>
-        <!--<%= f.input :category, label: "Categoría", collection: Service::CATEGORIES %>-->
         <%= f.association :category, label: "Categoría", label_method: :category, prompt: "Elije una categoria"  %>
         <!--<%= f.submit class: 'btn btn-primary' %>-->
         <%= f.button :button do %>
         <i class="icon-save"></i>
           Aceptar
         <% end %>
+        <%= link_to 'Cancel', '#', class: 'btn btn-danger ml-2' %>
       <% end %>
-    </div>
-  </div>
-</div>
