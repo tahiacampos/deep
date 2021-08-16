@@ -35,6 +35,6 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:title, :descripcion, :tarifa, :tiempo_ejecucion)
+    params.require(:service).permit(:title, :description, :price, :execution_time, :category )
   end
 end
