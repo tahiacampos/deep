@@ -15,3 +15,31 @@
 //Generales
 @import "mapbox-gl/dist/mapbox-gl";
 @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
+
+.navbar{
+    border-bottom: 4px solid #ffba00;
+  }
+  .bg-dark,
+  .card-header{
+    background:#1a1a1a !important;
+  }
+  .slide{
+    margin-top:-1em !important;
+  }
+  .bg-warning,
+  .card-header{
+    border: 1px solid transparent !important;
+  }
+  .bg-warning{
+    background:#ffba00 !important;
+  }
+  .sticky-bottom{
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 1.6em;
+    left: 90vw;
+    background-color: #ffba00;
+    height: 3em;
+    width: 3em;
+    font-size: 20px;
+  }
