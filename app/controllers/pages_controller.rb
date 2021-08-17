@@ -3,8 +3,14 @@ class PagesController < ApplicationController
 
   def home
     @service = Service.all
+    if user_signed_in?
+      @usuario = User.find(current_user.id)
+    end    
   end
 
   def services
+    if user_signed_in?
+      @usuario = User.find(current_user.id)
+    end  
   end
 end
