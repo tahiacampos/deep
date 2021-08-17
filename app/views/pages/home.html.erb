@@ -24,9 +24,29 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div><!-- / SLIDER -->
+</div>
+<br>
+<!-- / SLIDER -->
 
-<div class="card text-center"><!--  -->
+<div class="d-flex p-3 bg-secondary text-white justify-content-around"><!-- CALL TO ACTION -->
+  <div class="card bg-primary">
+      <div class="card-body text-center">
+        <p class="card-text">Some text inside the first card</p>
+      </div>
+    </div>
+    <div class="card bg-warning">
+      <div class="card-body text-center">
+        <p class="card-text">Some text inside the second card</p>
+      </div>
+    </div>
+    <div class="card bg-success">
+      <div class="card-body text-center">
+        <p class="card-text">Some text inside the third card</p>
+      </div>
+    </div>
+</div><!-- / CALL TO ACTION -->
+
+<%# <div class="card text-center"><!--  -->
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
@@ -63,37 +83,35 @@
           </div>
         </div>
       </div>
-  </div>
+  </div> %>
 
-<div class="container-fluid">
+<%# <div class="container-fluid">
   <img src="assets/pago.png" alt="">
-</div>
+</div> %>
+<br>
 
-
-<div class="container"><!-- CALL TO ACTION: CATEGORIES -->
+<div class="container mb-4"><!-- CALL TO ACTION: CATEGORIES -->
     <div class="row catagories"><!-- ROW -->
       <div class="cards">
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6195273/pexels-photo-6195273.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
-          Limpieza
+          <%= link_to 'Limpieza', pages_path, class: "btn btn-ghost" %>
         </div>
 
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6195953/pexels-photo-6195953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-          Sanitización
+          <%= link_to 'Sanitización', pages_path, class: "btn btn-ghost" %>
         </div>
 
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-          Mantenimiento
+          <%= link_to 'Mantenimiento', pages_path, class: "btn btn-ghost" %>
         </div>
       </div>
     </div>
- 
-
-
+    <br>    
     <div class="container text-center my-3"><!-- CONTENEDOR CARRUSEL --> 
         <div class="row mx-auto my-auto justify-content-center">
             <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner" role="listbox">
-
+ 
                 <!-- EMPIEZAN LOS CAROUSELS -->  
                     <div class="carousel-item active">
                         <div class="col-md-3">
@@ -105,8 +123,8 @@
                             </div>
                         </div>
                     </div>
-
-                  <%= @service.each do |servicio| %>
+ 
+                  <% @service.each do |servicio| %>
                     <div class="carousel-item">
                         <div class="col-md-3">
                             <div class="card">
@@ -131,12 +149,14 @@
         </div>
     </div><!-- / CONTENEDOR CARRUSEL --> 
 
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/7621315/pexels-photo-7621315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
-      <div class="container">
-        <h1>¡Crezcamos juntos, ofrece tus servicios en Deep!</h1>
-        <p>Te presentamos la oportunidad perfecta para darle más visibilidad a tu marca,  incrementar tus ganancias y destacar con tus servicios.</p>
-        <%= link_to '¡Inscribe tu negocio!', new_user_registration_path, class: "btn btn-flat" %>
-      </div>
+    <div class="banner">
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/7621315/pexels-photo-7621315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
+        <div class="container">
+          <h1>¡Crezcamos juntos, ofrece tus servicios en Deep!</h1>
+          <p>Te presentamos la oportunidad perfecta para darle más visibilidad a tu marca,  incrementar tus ganancias y destacar con tus servicios.</p>
+          <%= link_to '¡Inscribe tu negocio!', new_user_registration_path, class: "btn btn-flat" %>
+        </div>
     </div>
 </div>
 <hr>
+
