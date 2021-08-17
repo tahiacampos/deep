@@ -88,7 +88,25 @@
     </div>
     <p></p>
     <div class="row-services">
-    <p>acá deviesen de mostrarse las cards de los servicios que se agreguen.</p>
+    <div class="containner">
+      <%= @service.each do |servicio| %>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><h3> <%= servicio.title %> </h3></h5>
+            <p class="card-text"><%= servicio.description %></p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"><%= servicio.price %></small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <p></p>
     <div class = cards-services>
     </div>
     </div>
@@ -99,10 +117,6 @@
         <%= link_to '¡Inscribe tu negocio!', new_user_registration_path, class: "btn btn-flat" %>
       </div>
     </div>
-</div><!-- / CALL TO ACTION: CATEGORIES -->
-<hr>
-<div class="containner">
-  <%= @service.each do |servicio| %>
-    <h3> <%= servicio.title %> </h3>
-  <% end %>
 </div>
+<hr>
+
