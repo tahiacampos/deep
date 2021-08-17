@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'flats/index'
   get 'services/index'
-  get 'services/show'
-  get 'services/edit'
+  # get 'services/show'
+  # get 'services/edit'
   get 'services/new'
   get '/search', to: 'flats#search'
   devise_for :users

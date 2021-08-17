@@ -86,30 +86,51 @@
         </div>
       </div>
     </div>
-    <p></p>
-    <div class="row-services">
-    <div class="containner">
-      <%= @service.each do |servicio| %>
-    </div>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="card h-100">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><h3> <%= servicio.title %> </h3></h5>
-            <p class="card-text"><%= servicio.description %></p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted"><%= servicio.price %></small>
-          </div>
+ 
+
+
+    <div class="container text-center my-3"><!-- CONTENEDOR CARRUSEL --> 
+        <div class="row mx-auto my-auto justify-content-center">
+            <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+
+                <!-- EMPIEZAN LOS CAROUSELS -->  
+                    <div class="carousel-item active">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="https://via.placeholder.com/500x400/31f?text=1" class="img-fluid">
+                                </div>
+                                <div class="card-img-overlay">Slide 1</div>
+                            </div>
+                        </div>
+                    </div>
+
+                  <%= @service.each do |servicio| %>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="https://via.placeholder.com/500x400/e66?text=2" class="img-fluid">
+                                </div>
+                                <div class="card-img-overlay"><%= servicio.title %></div>
+                                <small class="text-muted"><%= servicio.price %></small>
+                            </div>
+                        </div>
+                    </div>
+                  <% end %>  
+                  <!-- TERMINAN LOS CAROUSELS --> 
+                </div>
+                <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+            </div>
         </div>
-      </div>
-    </div>
-    <% end %>
-    <p></p>
-    <div class = cards-services>
-    </div>
-    </div>
+    </div><!-- / CONTENEDOR CARRUSEL --> 
+
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/7621315/pexels-photo-7621315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
       <div class="container">
         <h1>¡Crezcamos juntos, ofrece tus servicios en Deep!</h1>

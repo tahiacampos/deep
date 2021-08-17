@@ -3,18 +3,22 @@ class ServicesController < ApplicationController
  
   def index
     @usuario = User.find(current_user.id)
-    @service = Service.all
+    @services = Service.all
     @category = Category.all
   end
  
   def show
     @usuario = User.find(current_user.id)
-    @service = Service.find(params[:id])
+    # @service = Service.find(params[:id])
   end
  
   def new
     @usuario = User.find(current_user.id)
-    @service = Service.new
+    if @usuario.user_type == 1
+      @service = Service.new
+    else
+      redirect_to root_path
+    end
   end
  
   def create
