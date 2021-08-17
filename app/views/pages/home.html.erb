@@ -24,9 +24,20 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div><!-- / SLIDER -->
+</div>
+<br>
+<!-- / SLIDER -->
+<div class="BannerCard-module_display-mobile__39h55">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
 
-<div class="card text-center"><!--  -->
+<%# <div class="card text-center"><!--  -->
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
@@ -63,141 +74,80 @@
           </div>
         </div>
       </div>
-  </div>
+  </div> %>
 
-<div class="container-fluid">
+<%# <div class="container-fluid">
   <img src="assets/pago.png" alt="">
-</div>
+</div> %>
+<br>
 
-
-<div class="container"><!-- CALL TO ACTION: CATEGORIES -->
+<div class="container mb-4"><!-- CALL TO ACTION: CATEGORIES -->
     <div class="row catagories"><!-- ROW -->
       <div class="cards">
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6195273/pexels-photo-6195273.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
-          Limpieza
+          <%= link_to 'Limpieza', pages_path, class: "btn btn-ghost" %>
         </div>
 
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6195953/pexels-photo-6195953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-          Sanitización
+          <%= link_to 'Sanitización', pages_path, class: "btn btn-ghost" %>
         </div>
 
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-          Mantenimiento
+          <%= link_to 'Mantenimiento', pages_path, class: "btn btn-ghost" %>
         </div>
       </div>
     </div>
-    <p></p>
-    <div class="row-services">
-    <div class="containner">
-      <%= @service.each do |servicio| %>
-    </div>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="card h-100">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title"><h3> <%= servicio.title %> </h3></h5>
-            <p class="card-text"><%= servicio.description %></p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted"><%= servicio.price %></small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-    <p></p>
-    <div class = cards-services>
-    </div>
-    </div>
-    <div class="container text-center my-3">
-    <h2 class="font-weight-light">Deep 4 Ever <3</h2>
-
-
-    <div class="row mx-auto my-auto justify-content-center">
-        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" role="listbox">
-
-            <!-- EMPIEZAN LOS CAROUSELS -->  
-                <div class="carousel-item active">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="https://via.placeholder.com/500x400/31f?text=1" class="img-fluid">
+    <br>    
+    <div class="container text-center my-3"><!-- CONTENEDOR CARRUSEL --> 
+        <div class="row mx-auto my-auto justify-content-center">
+            <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+ 
+                <!-- EMPIEZAN LOS CAROUSELS -->  
+                    <div class="carousel-item active">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="https://via.placeholder.com/500x400/31f?text=1" class="img-fluid">
+                                </div>
+                                <div class="card-img-overlay">Slide 1</div>
                             </div>
-                            <div class="card-img-overlay">Slide 1</div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="https://via.placeholder.com/500x400/e66?text=2" class="img-fluid">
+ 
+                  <% @service.each do |servicio| %>
+                    <div class="carousel-item">
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="https://via.placeholder.com/500x400/e66?text=2" class="img-fluid">
+                                </div>
+                                <div class="card-img-overlay"><%= servicio.title %></div>
+                                <small class="text-muted"><%= servicio.price %></small>
                             </div>
-                            <div class="card-img-overlay">Slide 2</div>
                         </div>
                     </div>
+                  <% end %>  
+                  <!-- TERMINAN LOS CAROUSELS --> 
                 </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="https://via.placeholder.com/500x400/7d2?text=3" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 3</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="https://via.placeholder.com/500x400?text=4" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 4</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="https://via.placeholder.com/500x400/aba?text=5" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 5</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="https://via.placeholder.com/500x400/fc0?text=6" class="img-fluid">
-                            </div>
-                            <div class="card-img-overlay">Slide 6</div>
-                        </div>
-                    </div>
-                </div>
-              <!-- TERMINAN LOS CAROUSELS --> 
+                <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
             </div>
-            <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </a>
-            <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </a>
         </div>
-    </div>
-    <h5 class="mt-2 fw-light">4 elementos a la vez, y solo uno en moviles</h5>
-</div>
+    </div><!-- / CONTENEDOR CARRUSEL --> 
 
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/7621315/pexels-photo-7621315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
-      <div class="container">
-        <h1>¡Crezcamos juntos, ofrece tus servicios en Deep!</h1>
-        <p>Te presentamos la oportunidad perfecta para darle más visibilidad a tu marca,  incrementar tus ganancias y destacar con tus servicios.</p>
-        <%= link_to '¡Inscribe tu negocio!', new_user_registration_path, class: "btn btn-flat" %>
-      </div>
+    <div class="banner">
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/7621315/pexels-photo-7621315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
+        <div class="container">
+          <h1>¡Crezcamos juntos, ofrece tus servicios en Deep!</h1>
+          <p>Te presentamos la oportunidad perfecta para darle más visibilidad a tu marca,  incrementar tus ganancias y destacar con tus servicios.</p>
+          <%= link_to '¡Inscribe tu negocio!', new_user_registration_path, class: "btn btn-flat" %>
+        </div>
     </div>
 </div>
 <hr>
+
