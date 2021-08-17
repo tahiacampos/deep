@@ -26,8 +26,8 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Cuenta", "#", class: "dropdown-item" %>
             <% if @usuario.user_type == 1 %>
-              <%= link_to "Mis Servicios", "#", class: "dropdown-item" %>
-              <%= link_to "Vender", "#", class: "dropdown-item" %>
+              <%= link_to "Mis Servicios", services_index_path, class: "dropdown-item" %>
+              <%= link_to "Vender", services_new_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             <% else %>
               <%= link_to "Mis Compras", "#", class: "dropdown-item" %>
