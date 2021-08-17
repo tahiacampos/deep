@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get '/search', to: 'flats#search'
   devise_for :users
   root to: 'pages#home'
-  resources :pages
+  resources :pages do
+    resources :services
+  end
   resources :home, only: [:home, :index] 
   resources :categories, only: [:home, :index, :show]
   resources :services

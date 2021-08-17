@@ -1,1 +1,16 @@
-<p>probando codigo indexxxxxxxasdasdsa</p>
+<% @servicios.each do |servicio| %>
+  <% if servicio.category_id == 1 %>
+    <div class="container-fluid">
+        <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+            <h2> <%= servicio.title %> </h2>
+            <p> <%= servicio.description %> </p>
+            <h2 class="card-trip-pricing"> <%= servicio.price %> </h2>
+            <%= link_to "Book now", "#", class: "btn btn-flat aligne-right" %>
+        </div>
+        </div>
+    </div>
+    <br>
+  <% end %>
+<% end %>
