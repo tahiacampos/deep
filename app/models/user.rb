@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :services
   has_many :bookings
-  enum user_type: [:customer, :supplier]
+  enum user_type: [:Cliente, :Empresa]
  
   # validates :name, presence: true
   # validates :address, presence: true

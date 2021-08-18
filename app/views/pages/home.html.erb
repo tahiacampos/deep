@@ -8,23 +8,24 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="https://i.imgur.com/P595RpP.jpeg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h3><strong>¿Necesitas de un buen equipo</strong></h3>
-        <h4>dedicado a la limpieza?</h4>
+      <div class="carousel-caption d-none d-md-block text-start">
+        <h1><strong>¿Necesitas de un buen equipo</strong></h1>
+        <h3>dedicado a la limpieza?</h3>
       </div>
     </div>
     <div class="carousel-item">
       <img src="https://i.imgur.com/efYoGDN.jpeg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <p><strong>¿Te gustaría ser parte de Deep?</strong></p>
-        <h3><strong>¡Sólo necesitas buenas ideas!</strong></h3>
+      <div class="carousel-caption d-none d-md-block text-start">
+        <h4><strong>¿Te gustaría ser parte de Deep?</strong></h4>
+        <h1><strong>¡Sólo necesitas buenas ideas!</strong></h1>
       </div>
     </div>
     <div class="carousel-item">
       <img src="https://i.imgur.com/GdpQjYw.jpeg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h4><strong>¿Sabes cuántas personas odian hacer algunas cosas?...</strong></h4>
-        <p><strong>...¡más de lo que te imaginas!</strong></p>
+      <div class="carousel-caption d-none d-md-block text-start">
+        <h1><strong>¿Sabes cuántas personas</strong></h1>
+        <h1><strong>odian hacer algunas cosas?...</strong></h1>
+        <h4><strong>...Más de lo que te imaginas</strong></h4>
       </div>
     </div>
   </div>
@@ -64,17 +65,16 @@
 <div class="container mb-4">
     <div class="row catagories">
       <div class="cards">
-      
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6195273/pexels-photo-6195273.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
-          <%= link_to 'Limpieza', pages_path, class: "btn btn-ghost fw-bold" %>
+          <%= link_to 'Limpieza', pages_path, class: "btn btn-ghost" %>
         </div>
 
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6195953/pexels-photo-6195953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-          <%= link_to 'Sanitización', pages_path, class: "btn btn-ghost fw-bold" %>
+          <%= link_to 'Sanitización', pages_path, class: "btn btn-ghost" %>
         </div>
 
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-          <%= link_to 'Mantenimiento', pages_path, class: "btn btn-ghost fw-bold" %>
+          <%= link_to 'Mantenimiento', pages_path, class: "btn btn-ghost" %>
         </div>
       </div>
     </div>
@@ -139,20 +139,3 @@
 <!-- / CONTENEDOR BANNER --> 
 
 
-<script>
-let items = document.querySelectorAll('.carousel .carousel-item')
-
-items.forEach((el) => {
-    const minPerSlide = 4
-    let next = el.nextElementSibling
-    for (var i=1; i<minPerSlide; i++) {
-        if (!next) {
-            // wrap carousel by using first child
-          next = items[0]
-        }
-        let cloneChild = next.cloneNode(true)
-        el.appendChild(cloneChild.children[0])
-        next = next.nextElementSibling
-    }
-})
-</script>

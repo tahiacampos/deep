@@ -16,9 +16,8 @@ ActiveRecord::Schema.define(version: 2021_08_12_155303) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.date "fecha"
-    t.string "forma_pago"
-    t.string "finalizado"
+    t.string "payment_method"
+    t.string "finished"
     t.bigint "service_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -44,10 +43,10 @@ ActiveRecord::Schema.define(version: 2021_08_12_155303) do
 
   create_table "services", force: :cascade do |t|
     t.string "title"
-    t.string "descripcion"
-    t.integer "tarifa"
-    t.decimal "tiempo_ejecucion"
-    t.string "garantia"
+    t.string "description"
+    t.integer "price"
+    t.decimal "execution_time"
+    t.string "warranty"
     t.string "photo"
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false
@@ -69,7 +68,7 @@ ActiveRecord::Schema.define(version: 2021_08_12_155303) do
     t.integer "user_type"
     t.text "name"
     t.string "rut"
-    t.text "direction"
+    t.text "address"
     t.string "phone"
     t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
