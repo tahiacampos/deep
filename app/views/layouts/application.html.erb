@@ -24,21 +24,5 @@
     <%= render 'shared/footer' %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
-    <script>
-    let items = document.querySelectorAll('.carousel .carousel-item')
-      items.forEach((el) => {
-          const minPerSlide = 4
-          let next = el.nextElementSibling
-          for (var i=1; i<minPerSlide; i++) {
-              if (!next) {
-                  // wrap carousel by using first child
-                next = items[0]
-              }
-              let cloneChild = next.cloneNode(true)
-              el.appendChild(cloneChild.children[0])
-              next = next.nextElementSibling
-          }
-      })
-    </script>
   </body>
 </html>
