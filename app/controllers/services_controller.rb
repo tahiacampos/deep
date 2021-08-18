@@ -17,7 +17,7 @@ class ServicesController < ApplicationController
     if @usuario.user_type == 1
       @service = Service.new
     else
-      redirect_to root_path
+      redirect_to root_path, :flash => { :success => "Message" }
     end
   end
  
