@@ -22,7 +22,7 @@ class ServicesController < ApplicationController
   end
  
   def create
-    @usuario = User.find(current_user.id)
+    # @usuario = User.find(current_user.id)
     @service = Service.new(service_params)
     @service.user = current_user
     if @service.save
