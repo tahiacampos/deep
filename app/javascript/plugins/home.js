@@ -1,5 +1,5 @@
 const initCarousel = () => {
-    let items = document.querySelectorAll('.carousel .carousel-item')
+    let items = document.querySelectorAll('#recipeCarousel .carousel-item')
 
     items.forEach((el) => {
         const minPerSlide = 4
