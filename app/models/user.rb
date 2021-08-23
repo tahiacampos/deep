@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :services
   has_many :bookings
   enum user_type: [:Cliente, :Empresa]
+  has_one_attached :photo
  
   # validates :name, presence: true
   # validates :address, presence: true

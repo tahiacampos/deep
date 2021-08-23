@@ -22,6 +22,9 @@ class ServicesController < ApplicationController
   end
  
   def create
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    end
     # @usuario = User.find(current_user.id)
     @service = Service.new(service_params)
     @service.user = current_user
@@ -34,9 +37,15 @@ class ServicesController < ApplicationController
  
   def edit
     @service = Service.find(params[:id])
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    end
   end
  
   def update
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    end
     @service = Service.find(params[:id])
     if @service.update(service_params)
       redirect_to service_path(@service)
@@ -51,6 +60,6 @@ class ServicesController < ApplicationController
   private
  
   def service_params
-    params.require(:service).permit(:title, :description, :price, :execution_time, :current_user, :category_id )
+    params.require(:service).permit(:title, :description, :price, :execution_time, :current_user, :category_id, :photo)
   end
 end

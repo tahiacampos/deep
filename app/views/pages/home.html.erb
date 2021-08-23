@@ -66,15 +66,15 @@
     <div class="row catagories">
       <div class="cards">
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6195273/pexels-photo-6195273.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
-          <%= link_to 'Limpieza', pages_path, class: "btn btn-ghost" %>
+          <%= link_to 'Limpieza', '#', class: "btn btn-ghost" %>
         </div>
 
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6195953/pexels-photo-6195953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-          <%= link_to 'Sanitización', pages_path, class: "btn btn-ghost" %>
+          <%= link_to 'Sanitización', '#', class: "btn btn-ghost" %>
         </div>
 
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-          <%= link_to 'Mantenimiento', pages_path, class: "btn btn-ghost" %>
+          <%= link_to 'Mantenimiento', '#', class: "btn btn-ghost" %>
         </div>
       </div>
     </div>
@@ -105,7 +105,9 @@
                         <div class="col-md-3">
                             <div class="card">
                                 <div class="card-img">
-                                    <img src="https://via.placeholder.com/500x400/e66?text=2" class="img-fluid">
+                                  <% if servicio.photo.attached? %>
+                                    <%= cl_image_tag(servicio.photo.key, width: 250, height: 200, crop: :fill) %>
+                                  <% end %>
                                 </div>
                                 <div class="card-img-overlay"><%= servicio.title %></div>
                                 <small class="text-muted"><%= servicio.price %></small>
