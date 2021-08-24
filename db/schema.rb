@@ -16,14 +16,15 @@ ActiveRecord::Schema.define(version: 2021_08_12_155303) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.string "payment_method"
-    t.string "finished"
+    t.date "fecha"
+    t.string "forma_pago"
+    t.string "finalizado"
     t.bigint "service_id", null: false
-    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_bookings_on_category_id"
     t.index ["service_id"], name: "index_bookings_on_service_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -43,18 +44,16 @@ ActiveRecord::Schema.define(version: 2021_08_12_155303) do
 
   create_table "services", force: :cascade do |t|
     t.string "title"
-    t.string "description"
-    t.integer "price"
-    t.decimal "execution_time"
-    t.string "warranty"
+    t.string "descripcion"
+    t.integer "tarifa"
+    t.decimal "tiempo_ejecucion"
+    t.string "garantia"
     t.string "photo"
-    t.bigint "user_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "rating"
     t.index ["category_id"], name: "index_services_on_category_id"
-    t.index ["user_id"], name: "index_services_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,15 +67,14 @@ ActiveRecord::Schema.define(version: 2021_08_12_155303) do
     t.integer "user_type"
     t.text "name"
     t.string "rut"
-    t.text "address"
+    t.text "direction"
     t.string "phone"
     t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "categories"
   add_foreign_key "bookings", "services"
-  add_foreign_key "bookings", "users"
   add_foreign_key "services", "categories"
-  add_foreign_key "services", "users"
 end
