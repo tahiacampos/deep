@@ -108,7 +108,7 @@
                         <%= cl_image_tag(servicio.photo.key, width: 250, height: 200, crop: :fill) %>
                       <% end %>
                   </div>
-                  <a href="/service/<%= servicio.id %>">
+                  <a href="/services/<%= servicio.id %>">
                   <div class="card-img-overlay"><%= servicio.title %></div>
                   </a>
                   <small class="text-muted"><%= servicio.price %></small>
