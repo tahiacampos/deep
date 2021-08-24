@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  # get 'flats/index'
+  get 'flats/index'
   # get 'services/index'
   # # get 'services/show'
   # # get 'services/edit'
   # get 'services/new'
-  # get '/search', to: 'flats#search'
+  get '/search', to: 'flats#search'
   # devise_for :users
   # root to: 'pages#home'
   # resources :pages do
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # resources :home, only: [:home, :index] 
   # resources :categories, only: [:home, :index, :show]
   # resources :services
-  # resources :flats
+  resources :flats
   resources :services do
     collection do
       get 'servicios'

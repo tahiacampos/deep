@@ -68,11 +68,11 @@
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6195273/pexels-photo-6195273.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
           <%= link_to 'Limpieza', '#', class: "btn btn-ghost" %>
         </div>
-
+ 
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6195953/pexels-photo-6195953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
           <%= link_to 'Sanitización', '#', class: "btn btn-ghost" %>
         </div>
-
+ 
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
           <%= link_to 'Mantenimiento', '#', class: "btn btn-ghost" %>
         </div>
@@ -98,7 +98,7 @@
               </div>
             </div>
           </div>
-
+ 
           <% @service.each do |servicio| %>
             <div class="carousel-item">
               <div class="d-block col-3 img-fluid">
@@ -108,12 +108,14 @@
                         <%= cl_image_tag(servicio.photo.key, width: 250, height: 200, crop: :fill) %>
                       <% end %>
                   </div>
+                  <a href="/service/<%= servicio.id %>">
                   <div class="card-img-overlay"><%= servicio.title %></div>
+                  </a>
                   <small class="text-muted"><%= servicio.price %></small>
                 </div>
               </div>
             </div>
-          <% end %>
+         <% end %>
           <!-- TERMINAN LOS CAROUSELS -->
         </div>
         <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
