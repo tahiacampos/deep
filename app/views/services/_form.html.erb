@@ -1,9 +1,10 @@
       <%= simple_form_for @service do |f| %>
+        <%= f.association :category, label: "Categoría", label_method: :category, prompt: "Elije una categoria"  %>
         <%= f.input :title, label: "Titulo" %>
         <%= f.input :description %>
         <%= f.input :price %>
         <%= f.input :execution_time %>
-        <%= f.association :category, label: "Categoría", label_method: :category, prompt: "Elije una categoria"  %>
+        <%= f.input :photo, as: :file %>
         <!--<%= f.submit class: 'btn btn-primary' %>-->
         <%= f.button :button do %>
         <i class="icon-save"></i>

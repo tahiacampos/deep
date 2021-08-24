@@ -6,6 +6,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :name, required: true %>
+    <%= f.input :rut, required: true %>
+    <%= f.input :address, required: true %>
+    <%= f.input :phone, required: true %>
+    <%= f.input :photo, as: :file, required: true %>
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
