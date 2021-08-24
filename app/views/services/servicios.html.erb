@@ -1,0 +1,26 @@
+<h3>Mis servicios</h3>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Titulo</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Tiempo de ejecucion</th>
+        <th scope="col">Tarifa</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <% @services.each do |servicio| %>
+    <tbody>
+      <tr>
+        <th scope="row"><%= servicio.titulo %></th>
+        <td><%= servicio.descripcion %></td>
+        <td><%= servicio.tiempo_ejecucion %></td>
+        <td><%= servicio.tarifa %></td>
+        <td>Editar</td>
+        <td>Borrar</td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
