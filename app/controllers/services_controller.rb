@@ -9,7 +9,7 @@ class ServicesController < ApplicationController
  
   def show
     @usuario = User.find(current_user.id)
-    # @service = Service.find(params[:id])
+    @service = Service.find(params[:id])
   end
  
   def new
@@ -58,6 +58,8 @@ class ServicesController < ApplicationController
   end
  
   private
+
+  
  
   def service_params
     params.require(:service).permit(:title, :description, :price, :execution_time, :current_user, :category_id, :photo)
