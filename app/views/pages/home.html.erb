@@ -92,9 +92,7 @@
             <div class="d-block col-3 img-fluid">
               <div class="card">
                 <div class="card-img">
-                    <% if servicio.photo.attached? %>
-                      <%= cl_image_tag(servicio.photo.key, width: 250, height: 200, crop: :fill) %>
-                    <% end %>
+                    <img src="https://via.placeholder.com/500x400/e66?text=2" class="img-fluid">
                 </div>
                 <div class="card-img-overlay">Slide 1</div>
               </div>
@@ -106,7 +104,9 @@
               <div class="d-block col-3 img-fluid">
                 <div class="card">
                   <div class="card-img">
-                      <img src="https://via.placeholder.com/500x400/e66?text=2" class="img-fluid">
+                      <% if servicio.photo.attached? %>
+                        <%= cl_image_tag(servicio.photo.key, width: 250, height: 200, crop: :fill) %>
+                      <% end %>
                   </div>
                   <div class="card-img-overlay"><%= servicio.title %></div>
                   <small class="text-muted"><%= servicio.price %></small>
