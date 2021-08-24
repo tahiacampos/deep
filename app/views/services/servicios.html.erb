@@ -1,26 +1,49 @@
-<h3>Mis servicios</h3>
-
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Titulo</th>
-        <th scope="col">Descripcion</th>
-        <th scope="col">Tiempo de ejecucion</th>
-        <th scope="col">Tarifa</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <% @services.each do |servicio| %>
-    <tbody>
-      <tr>
-        <th scope="row"><%= servicio.titulo %></th>
-        <td><%= servicio.descripcion %></td>
-        <td><%= servicio.tiempo_ejecucion %></td>
-        <td><%= servicio.tarifa %></td>
-        <td>Editar</td>
-        <td>Borrar</td>
-      </tr>
-    </tbody>
+<div class="container">
+  <div class="row justify-content-between">
+    <div class="col-4">
+      Ventas > Publicaciones
+    </div>
+    <div class="col-2">
+      <%= link_to "Publicar", new_service_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <% @services.each do |service|%>
+      <div class="col-4">
+        <%= cl_image_tag(service.photo.key, height:200, width:300)%>
+      </div>
+      <div class="col-5">
+        <p><small> <%= service.created_at %> </small></p>
+        <p> <%= service.title %> </p>
+        <p><small><%= service.description %></small></p>
+        <% if service.view == nil %>
+          <p><small>0 Visitas</small></p>
+        <% else %>
+          <p><small><%= service.view %> Visitas</small></p>
+        <% end %>        
+        
+    </div>
+    <div class="col-2 align-self-center">
+      <p>$ <%= service.price %> </p>
+    </div>
+     
+    <div class="dropdown col-1 align-self-center">
+      <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        
+      </a>
+    
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <li><a class="dropdown-item" href="#">Modificar</a></li>
+        <li><a class="dropdown-item" href="#">Pausar</a></li>
+        <li><a class="dropdown-item" href="#">Eliminar</a></li>
+        <li><a class="dropdown-item" href="#">Ver publicación</a></li>
+      </ul>
+    </div>
+    <hr>
     <% end %>
-  </table>
+    <hr>
+  </div>
+</div>
+
+

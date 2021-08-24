@@ -37,19 +37,18 @@ ActiveRecord::Schema.define(version: 2021_08_24_143519) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.date "fecha"
-    t.string "forma_pago"
-    t.string "finalizado"
+    t.string "payment_method"
+    t.string "finished"
     t.bigint "service_id", null: false
-    t.bigint "category_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_bookings_on_category_id"
     t.index ["service_id"], name: "index_bookings_on_service_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
+    t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -65,11 +64,12 @@ ActiveRecord::Schema.define(version: 2021_08_24_143519) do
 
   create_table "services", force: :cascade do |t|
     t.string "title"
-    t.string "descripcion"
-    t.integer "tarifa"
-    t.decimal "tiempo_ejecucion"
-    t.string "garantia"
+    t.string "description"
+    t.integer "price"
+    t.decimal "execution_time"
+    t.string "warranty"
     t.string "photo"
+    t.bigint "user_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2021_08_24_143519) do
     t.integer "view"
     t.integer "offer"
     t.index ["category_id"], name: "index_services_on_category_id"
+    t.index ["user_id"], name: "index_services_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -90,7 +91,7 @@ ActiveRecord::Schema.define(version: 2021_08_24_143519) do
     t.integer "user_type"
     t.text "name"
     t.string "rut"
-    t.text "direction"
+    t.text "address"
     t.string "phone"
     t.string "photo"
     t.float "latitude"
@@ -99,11 +100,9 @@ ActiveRecord::Schema.define(version: 2021_08_24_143519) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
-  add_foreign_key "bookings", "categories"
-=======
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
->>>>>>> 5aceb04db1d6d9bd2810f2b55e305db7c8643d19
   add_foreign_key "bookings", "services"
+  add_foreign_key "bookings", "users"
   add_foreign_key "services", "categories"
+  add_foreign_key "services", "users"
 end
