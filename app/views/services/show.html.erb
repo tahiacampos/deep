@@ -8,7 +8,7 @@
       <p><small>Vendidos</small></p>
       <p><h2><%= @service.title %></h2></p>
       <p><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></p>
-      <p><h1>$ <%=@service.price %></h1></p>
+      <p><h1><%=number_to_currency(@service.price, :precision => 0, :delimiter => ".")%></h1></p>
       <p><h5 class="text-success">En 6x <%=@service.price/6 %> sin interés</h5></p>
       <p><small>Servicio disponible en la ciudad de: </small></p>
       <div class="container">
