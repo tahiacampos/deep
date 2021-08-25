@@ -1,0 +1,29 @@
+<div class="container">
+ 
+  <div class="row">
+    <% @services.each do |service|%>
+      <div class="col-4">
+        <%= cl_image_tag(service.photo.key, height:200, width:300)%>
+      </div>
+      <div class="col-5">
+        <p><small> <%= service.created_at %> </small></p>
+        <p> <%= service.title %> </p>
+        <p><small><%= service.description %></small></p>
+        <% if service.view == nil %>
+          <p><small>0 Visitas</small></p>
+        <% else %>
+          <p><small><%= service.view %> Visitas</small></p>
+        <% end %>        
+        
+    </div>
+    <div class="col-2 align-self-center">
+      <p>$ <%= service.price %> </p>
+    </div>
+    
+    <hr>
+    <% end %>
+    <hr>
+  </div>
+</div>
+
+

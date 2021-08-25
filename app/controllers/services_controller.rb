@@ -61,6 +61,18 @@ class ServicesController < ApplicationController
     @services = Service.where(user_id:@id_usuario)
   end
  
+  def limpieza
+    @services = Service.where(category_id: 1)
+  end
+
+  def sanitizacion
+    @services = Service.where(category_id: 2)
+  end
+
+  def mantencion
+    @services = Service.where(category_id: 3)
+  end
+  
   private
  
   def service_params

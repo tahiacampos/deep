@@ -1,16 +1,25 @@
 <% @user = current_user %>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon bg-secondary">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag("https://i.imgur.com/CrNCQjv.png", :width=>350, :crop=>"scale")  %>
-    <% end %>
-
+    <%= image_tag("https://i.imgur.com/CrNCQjv.png", :width=>450, :crop=>"scale")  %>
+    
+  <% end %>
+ 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <form class="form-inline my-2 my-lg-2">
-    <input class="form-control mr-lg-2" type="search" placeholder="" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-  </form>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <form class="form-inline my-2 my-lg-2">
+          <input class="form-control mr-lg-2" type="search" placeholder="" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+  
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -42,4 +51,10 @@
       <% end %>
     </ul>
   </div>
+</div>
+<div class="container">
+ <small><%= link_to "Categorías", "#", class: "text-success" %></small>
+ <small><%= link_to "Vender", "#", class: "text-success" %></small>
+ <small><%= link_to "Ofertas", "#", class: "text-success" %></small>
+ <small><%= link_to "Ayuda", "#", class: "text-success" %></small>
 </div>
