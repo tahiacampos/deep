@@ -1,11 +1,83 @@
-<div class="container py-5">
-    <div class="jumbotron text-white jumbotron-image shadow" style="background-image: url(https://i.imgur.com/u2CaaFH.jpg0);">
-      <h2 class="mb-4">
-        Services#show<
-      </h2>
-      <p class="mb-4">
-        Find me in app/views/services/show.html.erb.
-      </p>
-      <a href="#" class="btn btn-primary">More Bootstrap Snippets</a>
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <%= cl_image_tag(@service.photo.key, height:600, width:600)%>
+      <hr>
+    </div>
+    <div class="col-5 border border-1">
+      <p><small>Vendidos</small></p>
+      <p><h2><%= @service.title %></h2></p>
+      <p><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></p>
+      <p><h1>$ <%=@service.price %></h1></p>
+      <p><h5 class="text-success">En 6x <%=@service.price/6 %> sin interés</h5></p>
+      <p><small>Servicio disponible en la ciudad de: </small></p>
+      <div class="container">
+        <div class="row">
+          <div class="col text-left">
+            <button class="btn btn-block btn-primary">Comprar ahora</button>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <img src="https://res.cloudinary.com/deepsoluciones/image/upload/v1629912453/medios-pago-791x665-2_ls3exg.png" hight=400 width=400 alt="">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+<div class="container">
+<p>Más publicaciones del vendedor</p>
+<!-- CONTENEDOR CARRUSEL --> 
+<div class="container mb-4">
+  <div class="container text-center my-3">
+    <div class="row mx-auto my-auto justify-content-center">
+      <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner carousel2" role="listbox">
+          <!-- EMPIEZAN LOS CAROUSELS -->  
+          <div class="carousel-item active">
+            <div class="d-block col-3 img-fluid">
+              <div class="card">
+                <div class="card-img">
+                    <img src="https://via.placeholder.com/500x400/e66?text=2" class="img-fluid">
+                </div>
+                <div class="card-img-overlay">Slide 1</div>
+              </div>
+            </div>
+          </div>
+ 
+          <% @mas_servicios.each do |servicio| %>
+            <div class="carousel-item">
+              <div class="d-block col-3 img-fluid">
+                <div class="card">
+                  
+                    <div class="card-img">
+                        <% if servicio.photo.attached? %>
+                          <%= cl_image_tag(servicio.photo.key, width: 250, height: 200, crop: :fill) %>
+                        <% end %>
+                    </div>
+                    
+                    <div class="card-img-overlay"><%= link_to servicio.title, service_path(servicio.id) %></div>
+                    </a>
+                    <small class="text-muted"><%= servicio.price %></small>
+                  </div>
+                </div>
+              </div>
+              
+         <% end %>
+          <!-- TERMINAN LOS CAROUSELS -->
+        </div>
+        <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

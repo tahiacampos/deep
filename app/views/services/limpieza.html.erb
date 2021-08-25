@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="col text-right">
+      <small>Ordenar por </small>
+    </div>
+  </div>
+</div>
+<br>
+
+<main class="container"><!-- CONTAINER -->
+ 
+    <div class="row">
+ 
+      <div class="col-lg-3"><!-- SIDEBAR -->
+ 
+        <h1>Categoria:</h1>
+        <h2>Limpieza</h2>
+        <br>
+        <p><h5 class="my-4">Subcategoría</h5></p>
+        <p><small class="my-4">Casas ()</small></p>
+        <p><small class="my-4">Autos ()</small></p>
+        <p><small class="my-4">Camionetas ()</small></p>
+        <p><small class="my-4">Oficinas ()</small></p>
+        <p><small class="my-4">Aviones ()</small></p>
+        <p><small class="my-4">Locales comerciales ()</small></p>
+        <br>
+        <br>
+        <p><h5 class="my-4">Pago</h5></p>
+        <p><small class="my-4">6 cuotas sin interés ()</small></p>
+        <p><small class="my-4">Contado ()</small></p>
+        <br>
+        <br>
+        <p><h5 class="my-4">Precio</h5></p>
+        <p><small class="my-4">Hasta $20.000()</small></p>
+        <p><small class="my-4">$20.000 a $50.000 ()</small></p>
+        <p><small class="my-4">Más de $50.000 ()</small></p>
+        <br>
+        <br>
+        <p><h5 class="my-4">Mejores vendedores</h5></p>
+
+       
+
+
+
+
+
+        
+ 
+      </div><!-- / SIDEBAR -->
+ 
+ 
+      <div class="col-lg-9"><!-- SERVICES -->
+ 
+        <div class="row"><!-- ROW SERVICES -->
+          <% @services.each do |service|%>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <%= cl_image_tag(service.photo.key, height:200, width:253)%>
+              <div class="card-body">
+                <% if service.offer == nil %>
+                  <h4><%=number_to_currency(service.price, :precision => 0, :delimiter => ".") %></h4>
+                <% else %>
+                  <small><del><%=number_to_currency(service.price, :precision =>0, :delimiter =>".")%></del></small>
+                  <h4> <%=number_to_currency(service.price - ((service.price * service.offer)/100), :precision => 0,:delimiter => ".")%> <h6 class="text-success"><%=service.offer%>% OFF</h6></h4>
+                <% end %>
+                <h4 class="card-title">
+                  <a href="#"><%=service.title%></a>
+                </h4>
+                
+                <p class="card-text"><%=service.description%></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+          <% end%>
+          
+ 
+        </div><!-- / ROW SERVICES -->
+ 
+      </div><!-- / SERVICES -->
+ 
+    </div>
+    <!-- /.row -->
+ 
+
+      </main><!-- / CONTAINER -->
+
+
+
+
