@@ -43,3 +43,4 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initCarousel();
 })
+import "controllers"

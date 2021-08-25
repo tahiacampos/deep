@@ -5,6 +5,14 @@ class ServicesController < ApplicationController
     @usuario = User.find(current_user.id)
     @services = Service.all
     @category = Category.all
+    if params[:query].present?
+      @services = @services.where('title ILIKE ?', "%#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'list.html', locals: { services: @services } }
+    end
   end
  
   def show

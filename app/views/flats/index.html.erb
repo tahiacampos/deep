@@ -2,3 +2,18 @@
      style="width: 30%; height: 250px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<div data-controller="refresh-list">
+  <%= form_with url: services_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
+    <%= f.text_field :query,
+                     class: "form-control",
+                     placeholder: 'Escribe el servicio que buscas',
+                     value: params[:query],
+                     data: {
+                     refresh_list_target: 'searchInput',
+                     action: "keyup->refresh-list#update"
+                     } %>
+  <% end %>
+  <div data-refresh-list-target="list">
+    <!-- [...] -->
+  </div>
+</div>
