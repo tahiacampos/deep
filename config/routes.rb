@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'flats/index'
   # get 'services/index'
   # # get 'services/show'
-  # # get 'services/edit'
+  ##get 'services/edit'
   # get 'services/new'
   get '/search', to: 'flats#search'
   # devise_for :users
@@ -20,9 +20,12 @@ Rails.application.routes.draw do
       get 'limpieza'
       get 'sanitizacion'
       get 'mantencion'
+      
     end
   end
+  
   resources :pages, except: [:destroy, :edit, :new, :create, :update]
+  resources :categories
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

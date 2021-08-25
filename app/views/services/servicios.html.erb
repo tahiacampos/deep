@@ -14,6 +14,7 @@
         <%= cl_image_tag(service.photo.key, height:200, width:300)%>
       </div>
       <div class="col-5">
+        <p><small>#<%= service.id %> </small></p>
         <p><small> <%= service.created_at %> </small></p>
         <p> <%= service.title %> </p>
         <p><small><%= service.description %></small></p>
@@ -34,10 +35,10 @@
       </a>
     
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <li><a class="dropdown-item" href="#">Modificar</a></li>
+        <li><a class="dropdown-item"> <%= link_to "Modificar", edit_service_path(service.id)%>  </a></li>
         <li><a class="dropdown-item" href="#">Pausar</a></li>
         <li><a class="dropdown-item" href="#">Eliminar</a></li>
-        <li><a class="dropdown-item" href="#">Ver publicación</a></li>
+        <li><a class="dropdown-item"> <%= link_to "Ver publicación", service_path(service.id)%>  </a></li>
       </ul>
     </div>
     <hr>
