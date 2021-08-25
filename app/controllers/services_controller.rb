@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :limpieza, :sanitizacion, :mantencion]
  
   def index
     @usuario = User.find(current_user.id)
@@ -16,8 +16,11 @@ class ServicesController < ApplicationController
   end
  
   def show
-    @usuario = User.find(current_user.id)
+    #@usuario = User.find(current_user.id)
+    @service = Service.find(params[:id])
     # @service = Service.find(params[:id])
+    #@id_usuario = current_user.id
+    @mas_servicios = Service.where(user_id: @service.user_id)
   end
  
   def new
@@ -69,6 +72,18 @@ class ServicesController < ApplicationController
     @services = Service.where(user_id:@id_usuario)
   end
  
+  def limpieza
+    @services = Service.where(category_id: 1)
+  end
+
+  def sanitizacion
+    @services = Service.where(category_id: 2)
+  end
+
+  def mantencion
+    @services = Service.where(category_id: 3)
+  end
+  
   private
  
   def service_params

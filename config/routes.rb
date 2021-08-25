@@ -17,11 +17,15 @@ Rails.application.routes.draw do
   resources :services do
     collection do
       get 'servicios'
+      get 'limpieza'
+      get 'sanitizacion'
+      get 'mantencion'
     end
   end
-
+  resources :pages, except: [:destroy, :edit, :new, :create, :update]
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # get '/services',    to: 'pages#services
+  
 end

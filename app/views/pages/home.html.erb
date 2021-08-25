@@ -66,15 +66,15 @@
     <div class="row catagories">
       <div class="cards">
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6195273/pexels-photo-6195273.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
-          <%= link_to 'Limpieza', '#', class: "btn btn-ghost" %>
+          <%= link_to 'Limpieza', limpieza_services_path, class: "btn btn-ghost" %>
         </div>
  
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6195953/pexels-photo-6195953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-          <%= link_to 'Sanitización', '#', class: "btn btn-ghost" %>
+          <%= link_to 'Sanitización', sanitizacion_services_path, class: "btn btn-ghost" %>
         </div>
  
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-          <%= link_to 'Mantenimiento', '#', class: "btn btn-ghost" %>
+          <%= link_to 'Mantenimiento', mantencion_services_path, class: "btn btn-ghost" %>
         </div>
       </div>
     </div>
@@ -99,7 +99,7 @@
             </div>
           </div>
  
-          <% @service.each do |servicio| %>
+          <% @services.each do |servicio| %>
             <div class="carousel-item">
               <div class="d-block col-3 img-fluid">
                 <div class="card">
@@ -110,8 +110,8 @@
                         <img src="https://i.imgur.com/WyxbTOS.png" class="img-thumbnail" alt="Servicio <%= servicio.title %>">
                       <% end %>
                   </div>
-                  <a href="/services/<%= servicio.id %>">
-                  <div class="card-img-overlay"><%= servicio.title %></div>
+                  
+                  <div class="card-img-overlay"><%= link_to servicio.title, service_path(servicio.id) %></div>
                   </a>
                   <small class="text-muted"><%= servicio.price %></small>
                 </div>
