@@ -13,12 +13,8 @@ class ServicesController < ApplicationController
   end
  
   def new
+    @service = Service.new
     @usuario = User.find(current_user.id)
-    if @usuario.user_type == 1
-      @service = Service.new
-    else
-      redirect_to root_path
-    end
   end
  
   def create
@@ -55,6 +51,14 @@ class ServicesController < ApplicationController
   end
  
   def destroy
+  end
+
+  def servicios
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    end
+    @id_usuario = current_user.id
+    @services = Service.where(user_id:@id_usuario)
   end
  
   private
