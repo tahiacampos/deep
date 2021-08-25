@@ -71,7 +71,16 @@ class ServicesController < ApplicationController
     @id_usuario = current_user.id
     @services = Service.where(user_id:@id_usuario)
   end
- 
+  
+  def search
+    @services = Service.where("lower(title) LIKE ?", "%#{params[:q].downcase}%")
+  end
+
+  def autocomplete
+    @services = search.first(5).map{|service|{title:service.title,path:service_path(service)}}
+    render json: {date: Time.now, services: @services}
+  end
+
   def limpieza
     @services = Service.where(category_id: 1)
   end
