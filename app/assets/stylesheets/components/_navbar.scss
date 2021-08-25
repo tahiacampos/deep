@@ -8,5 +8,41 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 70px;
+}
+
+.bg-secondary {
+  background-color: #292929 !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #f8f9fa;
+}
+
+.autocomplete {
+  display: block;
+  // left: 0px;
+  top: 3rem;
+  // width: 500px;
+  position: absolute;
+  list-style: none;
+  padding: 5;
+  margin: 5;
+
+  li {
+    padding: 1rem;
+  }
+
+}
+
+.btn-flat2 {
+  color: white;
+  padding: 2px 10px;
+  border-radius: 4px;
+  background: #292929;
+}
+
+.btn-flat2:hover {
+  background: #FFBA00;
+  color: #292929;
 }

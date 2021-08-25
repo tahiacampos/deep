@@ -5,14 +5,6 @@ class ServicesController < ApplicationController
     @usuario = User.find(current_user.id)
     @services = Service.all
     @category = Category.all
-    if params[:query].present?
-      @services = @services.where('title ILIKE ?', "%#{params[:query]}%")
-    end
-
-    respond_to do |format|
-      format.html # Follow regular flow of Rails
-      format.text { render partial: 'list.html', locals: { services: @services } }
-    end
   end
  
   def show
@@ -71,7 +63,7 @@ class ServicesController < ApplicationController
     @id_usuario = current_user.id
     @services = Service.where(user_id:@id_usuario)
   end
-  
+
   def search
     @services = Service.where("lower(title) LIKE ?", "%#{params[:q].downcase}%")
   end
@@ -92,7 +84,7 @@ class ServicesController < ApplicationController
   def mantencion
     @services = Service.where(category_id: 3)
   end
-  
+
   private
  
   def service_params

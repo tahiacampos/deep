@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   # resources :home, only: [:home, :index] 
   # resources :categories, only: [:home, :index, :show]
   # resources :services
+  get 'search', to:"servicess#search"
+  get 'autocomplete', to:"services#autocomplete"
   resources :flats
   resources :services do
     collection do
