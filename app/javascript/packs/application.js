@@ -38,9 +38,14 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
 import { initCarousel } from '../plugins/home.js';
+import { auto, closeAllLists } from '../components/search';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initCarousel();
+  auto();
+  addEventListener("click", function (e) {
+    closeAllLists()
+  });
 })
 import "controllers"
