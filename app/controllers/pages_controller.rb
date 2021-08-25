@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   # end
 
   def home
-    @service = Service.all
+    @services = Service.all
     if user_signed_in?
       @user = User.find(current_user.id)
     end
@@ -17,5 +17,9 @@ class PagesController < ApplicationController
     if user_signed_in?
       @usuario = User.find(current_user.id)
     end  
+  end
+
+  def show
+    @service = Service.find(params[:id])
   end
 end

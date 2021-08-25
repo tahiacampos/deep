@@ -8,8 +8,11 @@ class ServicesController < ApplicationController
   end
  
   def show
-    @usuario = User.find(current_user.id)
+    #@usuario = User.find(current_user.id)
+    @service = Service.find(params[:id])
     # @service = Service.find(params[:id])
+    #@id_usuario = current_user.id
+    @mas_servicios = Service.where(user_id: @service.user_id)
   end
  
   def new

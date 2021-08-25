@@ -99,7 +99,7 @@
             </div>
           </div>
  
-          <% @service.each do |servicio| %>
+          <% @services.each do |servicio| %>
             <div class="carousel-item">
               <div class="d-block col-3 img-fluid">
                 <div class="card">
@@ -108,8 +108,8 @@
                         <%= cl_image_tag(servicio.photo.key, width: 250, height: 200, crop: :fill) %>
                       <% end %>
                   </div>
-                  <a href="/services/<%= servicio.id %>">
-                  <div class="card-img-overlay"><%= servicio.title %></div>
+                  
+                  <div class="card-img-overlay"><%= link_to servicio.title, service_path(servicio.id) %></div>
                   </a>
                   <small class="text-muted"><%= servicio.price %></small>
                 </div>
