@@ -1,18 +1,19 @@
 <% @user = current_user %>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon bg-secondary justify-content-around">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag("https://i.imgur.com/CrNCQjv.png", :width=>350, :crop=>"scale")  %>
+    <%= image_tag("https://i.imgur.com/CrNCQjv.png", class: "img-nav")  %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 <!-- inicio search -->
-    <form novalidate="novalidate" class="simple_form search d-flex mr-5 my-2" action="/search" accept-charset="UTF-8" method="get" style="width: 100%;">
-      <div class="search-form-control form-group my-auto d-flex" style="width: 100%;">
-        <input class="form-control string required pl-3" type="text" placeholder="" id="search_form" name="q" />
-        <button type="submit" class="btn btn-outline-secondary"><i class="fas fa-search"></i> Buscar</button>
-      </div>
+    <form novalidate="novalidate" class="simple_form search" action="/search" accept-charset="UTF-8" method="get">
+      <div class="search-form-control form-group my-auto d-flex">
+        <input class="form-control string required pl-3" type="text" placeholder="Busca un servicio" id="search_form" name="q" />
+        <button name="button" type="submit" class="btn btn-flat2">
+          <a class="btn btn-flat2" href="#">Buscar</a>
+        </button>      </div>
     </form><!-- fin search -->
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
