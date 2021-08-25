@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :limpieza, :sanitizacion, :mantencion]
  
   def index
     @usuario = User.find(current_user.id)
