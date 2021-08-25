@@ -72,7 +72,7 @@ class ServicesController < ApplicationController
     @id_usuario = current_user.id
     @services = Service.where(user_id:@id_usuario)
   end
-  
+
   def search
     @services = Service.where("lower(title) LIKE ?", "%#{params[:q].downcase}%")
   end
@@ -94,8 +94,7 @@ class ServicesController < ApplicationController
     @services = Service.where(category_id: 3)
   end
 
-  
-  
+
   private
 
  
