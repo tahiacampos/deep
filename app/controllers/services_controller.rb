@@ -10,6 +10,15 @@ class ServicesController < ApplicationController
   def show
     #@usuario = User.find(current_user.id)
     @service = Service.find(params[:id])
+    if @service.view != nil
+      @service.view += 1
+      @service.save
+    else
+      @service.view = 1
+      @service.save
+    end
+   
+
     # @service = Service.find(params[:id])
     #@id_usuario = current_user.id
     @mas_servicios = Service.where(user_id: @service.user_id)
@@ -84,8 +93,11 @@ class ServicesController < ApplicationController
   def mantencion
     @services = Service.where(category_id: 3)
   end
+
+  
   
   private
+
  
   def service_params
     params.require(:service).permit(:title, :description, :price, :execution_time, :current_user, :category_id, :photo, :offer)
