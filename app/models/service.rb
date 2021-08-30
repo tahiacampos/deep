@@ -5,5 +5,6 @@ class Service < ApplicationRecord
   # CATEGORIES = Category.all
   validates :title, :description, presence: :true
   # validates :category, inclusion: { in: CATEGORIES }
- 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address? 
 end

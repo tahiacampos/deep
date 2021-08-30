@@ -4,7 +4,7 @@
       <%= cl_image_tag(@service.photo.key, height:600, width:600)%>
       <hr>
     </div>
-    <div class="col-5 border border-1">
+    <div class="col-5">
       <p><small>Vendidos</small></p>
       <p><h2><%= @service.title %></h2></p>
       <p><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></p>
@@ -22,12 +22,21 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <img src="https://res.cloudinary.com/deepsoluciones/image/upload/v1629912453/medios-pago-791x665-2_ls3exg.png" hight=400 width=400 alt="">
+            <p>Ubicación del Servicio:</p>
+            <div id="map"
+              style="width: 100%; height: 200px;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>">
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+<p></p>
+<div class= "container">
+  <img src="https://res.cloudinary.com/deepsoluciones/image/upload/v1629912453/medios-pago-791x665-2_ls3exg.png" hight=400 width=400 alt="">
 </div>
 <div class="container">
 <p>Más publicaciones del vendedor</p>
@@ -66,7 +75,6 @@
                   </div>
                 </div>
               </div>
-              
          <% end %>
           <!-- TERMINAN LOS CAROUSELS -->
         </div>
