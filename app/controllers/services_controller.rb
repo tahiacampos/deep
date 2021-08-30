@@ -17,8 +17,10 @@ class ServicesController < ApplicationController
       @service.view = 1
       @service.save
     end
-   
-
+    @services = Service.where(id: params[:id]).all
+    @markers = @services.geocoded.map do |service|
+      {lat: service.latitude, lng: service.longitude}
+    end
     # @service = Service.find(params[:id])
     #@id_usuario = current_user.id
     @mas_servicios = Service.where(user_id: @service.user_id)
@@ -99,6 +101,6 @@ class ServicesController < ApplicationController
 
  
   def service_params
-    params.require(:service).permit(:title, :description, :price, :execution_time, :current_user, :category_id, :photo, :offer)
+    params.require(:service).permit(:title, :description, :price, :execution_time, :current_user, :category_id, :photo, :offer, :address)
   end
 end
