@@ -1,4 +1,21 @@
 // Specific CSS for your home-page
+#benefits{
+  h3, .card-text{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 3em;
+  }
+  .d-flex {
+    background: $yellow;
+  }
+  p.card-text{
+    margin-right: 0.4em;
+    font-size: 1.2em;
+  }
+
+}
+
+
 .card-category:hover{
   animation: shrink  4s linear infinite;
   cursor: pointer
