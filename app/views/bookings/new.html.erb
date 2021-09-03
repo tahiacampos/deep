@@ -1,0 +1,8 @@
+<h1>Compra de servicios <%= @service.title %> </h1>
+<%= current_user.id %>
+<%= @service.id %>
+
+<%= simple_form_for [@service, @book] do |form| %>
+  <%= form.input :payment_method %>
+  <%= form.button :submit %>
+<% end %>

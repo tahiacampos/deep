@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'services/index'
   # # get 'services/show'
   ##get 'services/edit'
-  # get 'services/new'
+  # get 'services/new'clear
   get '/search', to: 'flats#search'
   # devise_for :users
   # root to: 'pages#home'
@@ -24,6 +24,8 @@ Rails.application.routes.draw do
       get 'mantencion'
       
     end
+
+    resources :bookings, only: %i[new create]
   end
   
   resources :pages, except: [:destroy, :edit, :new, :create, :update]
