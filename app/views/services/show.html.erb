@@ -14,7 +14,11 @@
       <div class="container">
         <div class="row">
           <div class="col text-left">
-            <button class="btn btn-block btn-primary">Comprar ahora</button>
+
+            <%= simple_form_for [ @service, @book ] do |f| %>
+              <%= f.submit "Comprar", class: "btn btn-primary" %>
+            <% end %>
+
           </div>
         </div>
       </div>

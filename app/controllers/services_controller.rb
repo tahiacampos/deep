@@ -10,6 +10,7 @@ class ServicesController < ApplicationController
   def show
     #@usuario = User.find(current_user.id)
     @service = Service.find(params[:id])
+    @book = Booking.all
     if @service.view != nil
       @service.view += 1
       @service.save
