@@ -44,21 +44,24 @@
 </div>
   <!-- / FIN SLIDER -->
   <!-- CALL TO ACTION -->
-  <div class="container">
-    <div class="d-flex p-3 text-white justify-content-around">
-      <div class="card bg-primary">
+  <div id="benefits" class="container-fluid p-0">
+    <div class="d-flex p-3 text-black justify-content-center">
+      <div class="card-block bg-primary">
         <div class="card-body text-center">
-          <p class="card-text">Optimiza tu tiempo usando Deep</p>
+          <h3 class="card-text float-left"><i class="fas fa-hourglass-half"></i></h3>
+            <p class="card-text">Optimiza tu tiempo usando Deep</p>
         </div>
       </div>
-      <div class="card bg-warning">
+      <div class="card-block bg-warning">
         <div class="card-body text-center">
-          <p class="card-text">Contacta con tu proveedor o cliente más cercano</p>
+          <h3 class="card-text float-left"><i class="fas fa-people-arrows"></i></h3>
+            <p class="card-text">Contacta con tu proveedor o cliente más cercano</p>
         </div>
       </div>
-      <div class="card bg-success">
+      <div class="card-block bg-success">
         <div class="card-body text-center">
-          <p class="card-text">Suma DeepPuntos para obtener descuentos</p>
+          <h3 class="card-text float-left"><i class="fas fa-gift"></i></h3>
+            <p class="card-text">Suma DeepPuntos para obtener descuentos</p>
         </div>
       </div>
     </div>
@@ -70,15 +73,15 @@
       <div class="row catagories">
         <div class="cards">
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6195273/pexels-photo-6195273.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
-            <%= link_to 'Limpieza', limpieza_services_path, class: "btn btn-ghost" %>
+            <%= link_to 'Limpieza', limpieza_services_path, class: "btn btn-ghost fw-bold" %>
           </div>
   
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/6195953/pexels-photo-6195953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-            <%= link_to 'Sanitización', sanitizacion_services_path, class: "btn btn-ghost" %>
+            <%= link_to 'Sanitización', sanitizacion_services_path, class: "btn btn-ghost fw-bold" %>
           </div>
   
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-            <%= link_to 'Mantenimiento', mantencion_services_path, class: "btn btn-ghost" %>
+            <%= link_to 'Mantenimiento', mantencion_services_path, class: "btn btn-ghost fw-bold" %>
           </div>
         </div>
       </div>
