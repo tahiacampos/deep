@@ -1,53 +1,74 @@
 <% @user = current_user %>
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon bg-secondary justify-content-around">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag("https://i.imgur.com/CrNCQjv.png", class: "img-nav")  %>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container-xl">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag("https://i.imgur.com/CrNCQjv.png", class: "img-nav")  %>
     <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-<!-- inicio search -->
-    <form novalidate="novalidate" class="simple_form search d-flex mr-5 my-2" action="/search" accept-charset="UTF-8" method="get">
-      <div class="search-form-control form-group my-auto d-flex">
-        <input class="form-control string required pl-3" type="text" placeholder="Busca un servicio" id="search_form" name="q" />
-        <button name="button" type="submit" class="btn btn-flat2">
-          <a class="btn btn-flat2" href="#">Buscar</a>
-        </button>
-      </div>
-    </form><!-- fin search -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
+    
 
-       
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= @user.email %>
-            <% if @user.photo.attached? %>
-              <%= cl_image_tag @user.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <% end %>    
-        </a>
-          
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Cuenta", edit_user_registration_path, class: "dropdown-item" %>
-            <%= link_to "Publicar", new_service_path, class: "dropdown-item" %>
-            <%= link_to "Mis servicios", servicios_services_path, class: "dropdown-item" %>
-            <%= link_to "Mis compras", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- ITEMS MENU -->
+        <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sobre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacto</a>
+              </li>
+        </ul>
+        <!-- / ITEMS MENU -->    
+  <!-- inicio search -->
+      <form novalidate="novalidate" class="simple_form search d-flex mr-5 my-2" action="/search" accept-charset="UTF-8" method="get">
+        <div class="search-form-control form-group my-auto d-flex">
+          <div class="input-group">
+              <input class="form-control string required pl-3 rounded-pill" type="text" placeholder="Busca un servicio" id="search_form" name="q" />
+              <!--<button name="button" type="submit" class="btn btn-flat2">
+                <a class="btn btn-flat2" href="#">Buscar</a>
+              </button>-->
           </div>
-        </li>
-      <% else %>
-        <li class="nav-item text-white">
-          <%= link_to "Crear cuenta" , new_user_registration_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Ingresar", new_user_session_path, class: "nav-link" %>
-        </li>
+        </div>
+      </form><!-- fin search -->
 
-      <% end %>
-    </ul>
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+          <%# <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> %>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= @user.email %>
+              <% if @user.photo.attached? %>
+                <%= cl_image_tag @user.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% else %>
+                  <img class= "avatar dropdown-toggle" src="https://bizraise.pro/wp-content/uploads/2014/09/no-avatar-300x300.png" />
+              <% end %>
+            </button>
+          <%# </a> %>
+            
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Cuenta", edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Publicar", new_service_path, class: "dropdown-item" %>
+              <%= link_to "Mis servicios", servicios_services_path, class: "dropdown-item" %>
+              <%= link_to "Mis compras", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item text-white">
+            <%= link_to "Crear cuenta" , new_user_registration_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Ingresar", new_user_session_path, class: "nav-link" %>
+          </li>
+
+        <% end %>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>
