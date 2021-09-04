@@ -14,12 +14,12 @@
             <p><h3><%=number_to_currency(@service.price, :precision => 0, :delimiter => ".")%></h3></p>
           </div>
           <div class="col">
-
+            <h2></h2>
           </div>
         </div>
       </div>
     <%= simple_form_for [@service, @book] do |form| %>
-     
+     <%=form.input :payment_method %>
       <%= form.button :submit %>
     <% end %>
   </div>

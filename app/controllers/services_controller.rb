@@ -68,6 +68,16 @@ class ServicesController < ApplicationController
   def destroy
   end
 
+  def compras
+    if user_signed_in?
+      @user = User.find(current_user.id)
+    end
+    @id_usuario = current_user.id
+    @bookings = Booking.where(user_id:@id_usuario)
+    @services = Service.all
+    
+  end
+
   def servicios
     if user_signed_in?
       @user = User.find(current_user.id)
