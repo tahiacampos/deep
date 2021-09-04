@@ -1,4 +1,5 @@
 // Specific CSS for your home-page
+
 #benefits{
   h3, .card-text{
     font-family: 'Poppins', sans-serif;
@@ -7,10 +8,17 @@
   }
   .d-flex {
     background: $yellow;
+    padding-top:0 ;
+  }
+  .card-body{
+    padding: 2.2em;
   }
   p.card-text{
     margin-right: 0.4em;
     font-size: 1.2em;
+  }
+  .card-block :hover{
+    background-color: darken($yellow, 10%);
   }
 
 }
