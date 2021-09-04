@@ -65,7 +65,8 @@
                   <h4> <%=number_to_currency(service.price - ((service.price * service.offer)/100), :precision => 0,:delimiter => ".")%> <h6 class="text-success"><%=service.offer%>% OFF</h6></h4>
                 <% end %>
                 <h4 class="card-title">
-                  <a href="#"><%=service.title%></a>
+                  <%= link_to service.title, service_path(service.id) %>
+                  
                 </h4>
                 
                 <p class="card-text"><%=service.description%></p>
