@@ -16,6 +16,10 @@
 @import "mapbox-gl/dist/mapbox-gl";
 @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
 
+body {
+  background: #fbf3f0;
+}
+
 h1{
   font-family: 'Poppins', sans-serif;
   font-weight: bold;

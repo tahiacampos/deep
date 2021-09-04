@@ -6,7 +6,19 @@
       font-weight: 700;
     }
     /*html{font-size: 62.5%;}*/
+.login,
+.register{
+  background: $purple;
+  color: white;
+  padding: 4em;
+  border-radius: 20px;
 
+  h2{
+    color: #b09fb7;
+    font-size: 1.5em;
+    margin: 1em auto;
+  }
+}
 .blob-ui {
 
     .form-group,
