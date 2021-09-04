@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       get 'limpieza'
       get 'sanitizacion'
       get 'mantencion'
+      get 'compras'
       
     end
 

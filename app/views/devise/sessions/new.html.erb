@@ -5,6 +5,7 @@
       <h1>Log in</h1>
       <h2>¡Hola! Para comprar o vender debes ingresar a tu cuenta</h2>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "" }) do |f| %>
+
         <div class="form-inputs">
           <%= f.input :email,
                       required: false,

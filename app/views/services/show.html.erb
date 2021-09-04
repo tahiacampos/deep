@@ -10,13 +10,18 @@
       <p><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></p>
       <p><h1><%=number_to_currency(@service.price, :precision => 0, :delimiter => ".")%></h1></p>
       <p><h5 class="text-success">En 6x <%=@service.price/6 %> sin interés</h5></p>
-      <p><small>Servicio disponible en la ciudad de: </small></p>
       <div class="container">
         <div class="row">
           <div class="col text-left">
-
-
-
+          <% if user_signed_in? %>
+              <%if @service.user_id != current_user.id%>
+                <%=link_to "Comprar", new_service_booking_path(@service), class: "btn btn-success" %>
+              <%else%>
+                <%=link_to "Comprar", "#", class: "btn btn-success disabled" %>
+              <% end %>
+          <% else%>
+              <%=link_to "Comprar", new_service_booking_path(@service), class: "btn btn-success" %>
+          <% end %>
           </div>
         </div>
       </div>
@@ -38,7 +43,6 @@
 </div>
 <p></p>
 <div class= "container">
-  <img src="https://res.cloudinary.com/deepsoluciones/image/upload/v1629912453/medios-pago-791x665-2_ls3exg.png" hight=400 width=400 alt="">
 </div>
 <div class="container">
 <p>Más publicaciones del vendedor</p>
