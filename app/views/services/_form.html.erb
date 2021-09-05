@@ -1,10 +1,10 @@
       <%= simple_form_for @service do |f| %>
-        <%= f.association :category, label: "Categoría", label_method: :category, prompt: "Elije una categoria"  %>
-        <%= f.input :title, label: "Titulo" %>
-        <%= f.input :description %>
-        <%= f.input :price %>
-        <%= f.input :execution_time %>
-        <%= f.input :offer %>
+        <%= f.association :category, label: "Categoría", label_method: :category, prompt: "Elije una categoria", input_html: { class: 'rounded-pill form-control-lg' }   %>
+        <%= f.input :title, label: "Titulo", input_html: { class: 'rounded-pill form-control-lg' } %>
+        <%= f.input :description, input_html: { class: 'rounded-pill form-control-lg' }  %>
+        <%= f.input :price, input_html: { class: 'rounded-pill form-control-lg' }  %>
+        <%= f.input :execution_time, input_html: { class: 'rounded-pill form-control-lg' }  %>
+        <%= f.input :offer, input_html: { class: 'rounded-pill form-control-lg' }  %>
         <%= f.input :address %>
         <%= f.input :photo, as: :file %>
         <!--<%= f.submit class: 'btn btn-primary' %>-->
@@ -14,3 +14,9 @@
         <% end %>
         <%= link_to 'Cancel', '#', class: 'btn btn-danger ml-2' %>
       <% end %>
+
+ 
+<div class="btn-group d-flex" role="group">
+  <button type="button" class="btn btn-primary form-control-lg w-100">Submit</button>
+  <button type="button" class="btn btn-warning form-control-lg w-100">Cancel</button>
+</div>

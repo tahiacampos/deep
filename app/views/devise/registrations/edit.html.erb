@@ -1,13 +1,13 @@
 <div class="container">
 <div class='row justify-content-center'>
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
-  <div class= "col-6">
+  <div class= "col-9 my-form">
+    <h1>Edit <%= resource_name.to_s.humanize %></h1>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <%= f.input :name, required: true %>
-        <%= f.input :rut, required: true %>
+        <%= f.input :name, input_html: { class: ''}, required: true %>
+        <%= f.input :rut, input_html: { class: 'rounded-pill form-control-lg'}, required: true %>
         <%= f.input :address, required: true %>
         <%= f.input :phone, required: true %>
         <%= f.input :photo, as: :file, required: true %>
@@ -20,18 +20,18 @@
         <%= f.input :password,
                     hint: "leave it blank if you don't want to change it",
                     required: false,
-                    input_html: { autocomplete: "new-password" } %>
+                    input_html: { class: 'rounded-pill form-control-lg', autocomplete: "new-password" } %>
         <%= f.input :password_confirmation,
                     required: false,
-                    input_html: { autocomplete: "new-password" } %>
+                    input_html: { class: 'rounded-pill form-control-lg', autocomplete: "new-password" } %>
         <%= f.input :current_password,
                     hint: "we need your current password to confirm your changes",
                     required: true,
-                    input_html: { autocomplete: "current-password" } %>
+                    input_html: { class: 'rounded-pill form-control-lg', autocomplete: "current-password" } %>
       </div>
 
-      <div class="form-actions btn btn-primary">
-        <%= f.button :submit, "Update" %>
+      <div class="form-actions d-grid gap-2">
+        <%= f.button :submit, "Update", class: 'btn btn-primary form-control-lg rounded-pill' %>
       </div>
     <% end %>
   </div>
