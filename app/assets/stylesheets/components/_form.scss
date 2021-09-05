@@ -7,15 +7,17 @@
     }
     /*html{font-size: 62.5%;}*/
 .login,
-.register{
+.register,
+.my-form{
   background: $purple;
   color: white;
   padding: 4em;
   border-radius: 20px;
+  box-shadow: -12px 13px  1px $yellow;
 
   h2{
     color: #b09fb7;
-    font-size: 1.5em;
+    font-size: 1.4em;
     margin: 1em auto;
   }
 }
