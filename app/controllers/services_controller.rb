@@ -66,6 +66,11 @@ class ServicesController < ApplicationController
   end
  
   def destroy
+    @service = Service.find(params[:id])
+    @service.destroy
+
+    # no need for app/views/restaurants/destroy.html.erb
+
   end
 
   def compras
