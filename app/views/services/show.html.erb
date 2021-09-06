@@ -72,7 +72,7 @@
  
           <% @mas_servicios.each do |servicio| %>
             <div class="carousel-item">
-              <div class="d-block col-3 img-fluid">
+              <div class="d-block col-sm img-fluid">
                 <div class="card">
                   
                     <div class="card-img">
@@ -83,7 +83,7 @@
                       <% end %>
                     </div>
                     
-                    <div class="card-img-overlay"><%= link_to servicio.title, service_path(servicio.id) %></div>
+                    <div class="card-img-top"><%= link_to servicio.title, service_path(servicio.id) %></div>
                     <small class="text-muted"><%= servicio.price %></small>
                   </div>
                 </div>
