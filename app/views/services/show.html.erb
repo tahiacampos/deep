@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-7">
-      <%= cl_image_tag(@service.photo.key, height:600, width:600)%>
+      <% if @service.photo.attached? %>
+        <%= cl_image_tag(@service.photo.key, height:600, width:600)%>
+      <% end %>
+
       <hr>
     </div>
     <div class="col-5">
