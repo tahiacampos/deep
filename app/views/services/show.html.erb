@@ -13,6 +13,7 @@
       <p><small>Vendidos</small></p>
       <p><h2><%= @service.title %></h2></p>
       <p><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></p>
+      <p><%= @service.description %></p>
       <p><h1><%=number_to_currency(@service.price, :precision => 0, :delimiter => ".")%></h1></p>
       <p><h5 class="text-success">En 6x <%=@service.price/6 %> sin interés</h5></p>
       <div class="container">
@@ -83,7 +84,6 @@
                     </div>
                     
                     <div class="card-img-overlay"><%= link_to servicio.title, service_path(servicio.id) %></div>
-                    </a>
                     <small class="text-muted"><%= servicio.price %></small>
                   </div>
                 </div>
