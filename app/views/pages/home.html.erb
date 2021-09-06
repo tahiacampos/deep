@@ -43,30 +43,7 @@
   </div>
 </div>
   <!-- / FIN SLIDER -->
-  <!-- CALL TO ACTION -->
-  <div id="benefits" class="container-fluid p-0">
-    <div class="d-flex p-3 text-black justify-content-center">
-      <div class="card-block">
-        <div class="card-body text-center">
-          <h3 class="card-text float-left"><i class="fas fa-hourglass-half"></i></h3>
-            <p class="card-text">Optimiza tu tiempo usando Deep</p>
-        </div>
-      </div>
-      <div class="card-block bg-warning">
-        <div class="card-body text-center">
-          <h3 class="card-text float-left"><i class="fas fa-people-arrows"></i></h3>
-            <p class="card-text">Contacta con tu proveedor o cliente más cercano</p>
-        </div>
-      </div>
-      <div class="card-block">
-        <div class="card-body text-center">
-          <h3 class="card-text float-left"><i class="fas fa-gift"></i></h3>
-            <p class="card-text">Suma DeepPuntos para obtener descuentos</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- CALL TO ACTION -->
+
   <br>
   <!-- ROW CATEGORIES -->
   <div class="container mb-4">
@@ -97,7 +74,7 @@
 
             <% @services.each_with_index do |servicio, index| %>
               <div class="carousel-item <%= "active" if index.zero? %>">
-                <div class="d-block col-3 img-fluid">
+                <div class="d-block col-sm img-fluid">
                   <div class="card">
                     <div class="card-img">
                         <% if servicio.photo.attached? %>
@@ -124,16 +101,16 @@
         </div>
       </div>
     </div>
-  <!-- / CONTENEDOR CARRUSEL --> 
-  <div class="container mb-4">
-      <div class="banner">
-        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/7621315/pexels-photo-7621315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
-          <div class="container">
-            <h1>¡Crezcamos juntos, ofrece tus servicios en Deep!</h1>
-            <p>Te presentamos la oportunidad perfecta para darle más visibilidad a tu marca,  incrementar tus ganancias y destacar con tus servicios.</p>
-            <%= link_to '¡Inscribe tu negocio!', new_user_registration_path, class: "btn btn-flat" %>
-          </div>
+  <!-- / CONTENEDOR CARRUSEL -->
+<!-- / CONTENEDOR BANNER --> 
+  <div class="container-fluid p-0">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/7621315/pexels-photo-7621315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
+      <div class="container">
+        <h1>¡Crezcamos juntos, ofrece tus servicios en Deep!</h1>
+        <p>Te presentamos la oportunidad perfecta para darle más visibilidad a tu marca,  incrementar tus ganancias y destacar con tus servicios.</p>
+        <%= link_to '¡Inscribe tu negocio!', new_user_registration_path, class: "btn btn-flat" %>
       </div>
+    </div>
   </div>
 </div>
-<!-- / CONTENEDOR BANNER --> 
+<!-- / FIN BANNER --> 
