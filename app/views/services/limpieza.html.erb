@@ -56,7 +56,15 @@
           <% @services.each do |service|%>
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <%= cl_image_tag(service.photo.key, height:200, width:253)%>
+              <% if service.photo.attached? %>
+                <%= cl_image_tag(service.photo.key, height:600, width:600)%>
+              <% else %>
+                <img src="https://i.imgur.com/WyxbTOS.png" class="img-thumbnail" alt="Servicio <%= service.title %>">
+              <% end %>
+
+
+
+
               <div class="card-body">
                 <% if service.offer == nil %>
                   <h4><%=number_to_currency(service.price, :precision => 0, :delimiter => ".") %></h4>

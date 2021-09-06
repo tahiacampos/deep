@@ -1,5 +1,4 @@
-<%= cl_image_tag("desin_jims02.jpg") %>
-
+<%= cl_image_tag("limpieza_zrfc3q.jpg") %>
 <div class="container">
   <div class="row">
     <div class="col text-right">
@@ -10,13 +9,13 @@
 <br>
 
 <main class="container"><!-- CONTAINER -->
- 
+
     <div class="row">
- 
+
       <div class="col-lg-3"><!-- SIDEBAR -->
- 
+
         <h1>Categoria:</h1>
-        <h2>Sanitización</h2>
+        <h2>Limpieza</h2>
         <br>
         <p><h5 class="my-4">Subcategoría</h5></p>
         <p><small class="my-4">Casas ()</small></p>
@@ -40,24 +39,32 @@
         <br>
         <p><h5 class="my-4">Mejores vendedores</h5></p>
 
-       
 
 
 
 
 
-        
- 
+
+
+
       </div><!-- / SIDEBAR -->
- 
- 
+
+
       <div class="col-lg-9"><!-- SERVICES -->
- 
+
         <div class="row"><!-- ROW SERVICES -->
           <% @services.each do |service|%>
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <%= cl_image_tag(service.photo.key, height:200, width:253)%>
+              <% if service.photo.attached? %>
+                <%= cl_image_tag(service.photo.key, height:600, width:600)%>
+              <% else %>
+                <img src="https://i.imgur.com/WyxbTOS.png" class="img-thumbnail" alt="Servicio <%= service.title %>">
+              <% end %>
+
+
+
+
               <div class="card-body">
                 <% if service.offer == nil %>
                   <h4><%=number_to_currency(service.price, :precision => 0, :delimiter => ".") %></h4>
@@ -66,7 +73,8 @@
                   <h4> <%=number_to_currency(service.price - ((service.price * service.offer)/100), :precision => 0,:delimiter => ".")%> <h6 class="text-success"><%=service.offer%>% OFF</h6></h4>
                 <% end %>
                 <h4 class="card-title">
-                  <a href="#"><%=service.title%></a>
+                  <%= link_to service.title, service_path(service.id) %>
+
                 </h4>
                 
                 <p class="card-text"><%=service.description%></p>

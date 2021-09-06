@@ -3,6 +3,9 @@
     <div class="col-7">
       <% if @service.photo.attached? %>
         <%= cl_image_tag(@service.photo.key, height:600, width:600)%>
+      <% else %>
+          <img src="https://i.imgur.com/WyxbTOS.png" class="img-thumbnail" alt="Servicio <%= @service.title %>">
+
       <% end %>
 
       <hr>
