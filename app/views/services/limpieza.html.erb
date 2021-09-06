@@ -1,4 +1,4 @@
-<%= cl_image_tag("limpieza_zrfc3q.jpg") %>
+
 <div class="container">
   <div class="row">
     <div class="col text-right">
@@ -10,57 +10,51 @@
 
 <main class="container"><!-- CONTAINER -->
  
-    <div class="row">
- 
-      <div class="col-lg-3"><!-- SIDEBAR -->
- 
-        <h1>Categoria:</h1>
-        <h2>Limpieza</h2>
-        <br>
-        <p><h5 class="my-4">Subcategoría</h5></p>
-        <p><small class="my-4">Casas ()</small></p>
-        <p><small class="my-4">Autos ()</small></p>
-        <p><small class="my-4">Camionetas ()</small></p>
-        <p><small class="my-4">Oficinas ()</small></p>
-        <p><small class="my-4">Aviones ()</small></p>
-        <p><small class="my-4">Locales comerciales ()</small></p>
-        <br>
-        <br>
-        <p><h5 class="my-4">Pago</h5></p>
-        <p><small class="my-4">6 cuotas sin interés ()</small></p>
-        <p><small class="my-4">Contado ()</small></p>
-        <br>
-        <br>
-        <p><h5 class="my-4">Precio</h5></p>
-        <p><small class="my-4">Hasta $20.000()</small></p>
-        <p><small class="my-4">$20.000 a $50.000 ()</small></p>
-        <p><small class="my-4">Más de $50.000 ()</small></p>
-        <br>
-        <br>
-        <p><h5 class="my-4">Mejores vendedores</h5></p>
+  <div class="row">
 
-       
+    <div class="col-lg-3"><!-- SIDEBAR -->
 
+          <h1>Categoria:</h1>
+          <h2>Limpieza</h2>
+          <br>
+          <p><h5 class="my-4">Subcategoría</h5></p>
+          <p><small class="my-4">Casas ()</small></p>
+          <p><small class="my-4">Autos ()</small></p>
+          <p><small class="my-4">Camionetas ()</small></p>
+          <p><small class="my-4">Oficinas ()</small></p>
+          <p><small class="my-4">Aviones ()</small></p>
+          <p><small class="my-4">Locales comerciales ()</small></p>
+          <br>
+          <br>
+          <p><h5 class="my-4">Pago</h5></p>
+          <p><small class="my-4">6 cuotas sin interés ()</small></p>
+          <p><small class="my-4">Contado ()</small></p>
+          <br>
+          <br>
+          <p><h5 class="my-4">Precio</h5></p>
+          <p><small class="my-4">Hasta $20.000()</small></p>
+          <p><small class="my-4">$20.000 a $50.000 ()</small></p>
+          <p><small class="my-4">Más de $50.000 ()</small></p>
+          <br>
+          <br>
+          <p><h5 class="my-4">Mejores vendedores</h5></p>
 
-
-
-
-        
- 
-      </div><!-- / SIDEBAR -->
+    </div><!-- / SIDEBAR -->
  
  
-      <div class="col-lg-9"><!-- SERVICES -->
+    <div class="col-lg-9"><!-- SERVICES -->
  
         <div class="row"><!-- ROW SERVICES -->
           <% @services.each do |service|%>
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <% if service.photo.attached? %>
+
                 <%= cl_image_tag(service.photo.key, height:600, width:600)%>
               <% else %>
                 <img src="https://i.imgur.com/WyxbTOS.png" class="img-thumbnail" alt="Servicio <%= service.title %>">
               <% end %>
+
 
 
 
@@ -89,13 +83,17 @@
  
         </div><!-- / ROW SERVICES -->
  
-      </div><!-- / SERVICES -->
+    </div><!-- / SERVICES -->
  
     </div>
     <!-- /.row -->
  
 
       </main><!-- / CONTAINER -->
+
+
+
+
 
 
 
