@@ -65,6 +65,7 @@ h1{
 
   .footer {
     background: #121213;
+    justify-content: space-between;
     display: flex;
     align-items: center;
     justify-content:last baseline;
@@ -79,7 +80,7 @@ h1{
   }
 
   .footer-links a {
-    color:white;
+    color:#ffba00;
     opacity: 0.15;
     text-decoration: none;
     font-size: 24px;
