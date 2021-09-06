@@ -101,15 +101,15 @@ class ServicesController < ApplicationController
   end
 
   def limpieza
-    @services = Service.where(category_id: 1)
+    @services = Service.where(category_id: 3)
   end
 
   def sanitizacion
-    @services = Service.where(category_id: 2)
+    @services = Service.where(category_id: 1)
   end
 
   def mantencion
-    @services = Service.where(category_id: 3)
+    @services = Service.where(category_id: 2)
   end
 
 
