@@ -9,14 +9,8 @@
         <%= f.input :photo, as: :file %>
         <!--<%= f.submit class: 'btn btn-primary' %>-->
         <%= f.button :button do %>
-        <i class="icon-save"></i>
-          Aceptar
+        <i class="btn btn-primary "> Aceptar </i>
         <% end %>
-        <%= link_to 'Cancel', '#', class: 'btn btn-danger ml-2' %>
+        <%= link_to 'Cancel', '#', class: 'btn btn-warning' %>
       <% end %>
 
- 
-<div class="btn-group d-flex" role="group">
-  <button type="button" class="btn btn-primary form-control-lg w-100">Submit</button>
-  <button type="button" class="btn btn-warning form-control-lg w-100">Cancel</button>
-</div>
