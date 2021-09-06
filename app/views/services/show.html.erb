@@ -4,7 +4,7 @@
       <% if @service.photo.attached? %>
         <%= cl_image_tag(@service.photo.key, height:600, width:600)%>
         <% else %>
-        <img src="https://i.imgur.com/WyxbTOS.png" class="img-thumbnail" alt="Servicio <%= service.title %>">
+        <img src="https://i.imgur.com/WyxbTOS.png" class="img-thumbnail" alt="Servicio">
       <% end %>
 
       <hr>
@@ -77,9 +77,9 @@
                     <div class="card-img">
                         <% if servicio.photo.attached? %>
                           <%= cl_image_tag(servicio.photo.key, width: 250, height: 200, crop: :fill) %>
-                      <% else %>
-                      <img src="https://i.imgur.com/WyxbTOS.png" class="img-thumbnail" alt="Servicio <%= servicio.title %>">
-                    <% end %>
+                        <% else %>
+                        <img src="https://i.imgur.com/WyxbTOS.png" class="img-thumbnail" alt="Servicio <%= servicio.title %>">
+                      <% end %>
                     </div>
                     
                     <div class="card-img-overlay"><%= link_to servicio.title, service_path(servicio.id) %></div>
