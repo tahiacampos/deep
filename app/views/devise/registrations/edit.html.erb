@@ -1,55 +1,57 @@
 <div class="container">
-<div class='row justify-content-center'>
-  <div class= "col-9 my-form">
-    <h1>Edit <%= resource_name.to_s.humanize %></h1>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= f.error_notification %>
+  <div class='row justify-content-center'>
+    <div class= "col-sm my-form">
+      <h1>Edit <%= resource_name.to_s.humanize %></h1>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :name, input_html: { class: ''}, required: true %>
-        <%= f.input :rut, input_html: { class: 'rounded-pill form-control-lg'}, required: true %>
-        <%= f.input :address, required: true %>
-        <%= f.input :phone, required: true %>
-        <%= f.input :photo, as: :file, required: true %>
-        <%= f.input :email, required: true, autofocus: true %>
+        <div class="form-inputs">
+          <%= f.input :name, input_html: { class: ''}, required: true %>
+          <%= f.input :rut, input_html: { class: 'rounded-pill form-control-lg'}, required: true %>
+          <%= f.input :address, required: true %>
+          <%= f.input :phone, required: true %>
+          <%= f.input :photo, as: :file, required: true %>
+          <%= f.input :email, required: true, autofocus: true %>
 
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-        <% end %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
 
-        <%= f.input :password,
-                    hint: "leave it blank if you don't want to change it",
-                    required: false,
-                    input_html: { class: 'rounded-pill form-control-lg', autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: false,
-                    input_html: { class: 'rounded-pill form-control-lg', autocomplete: "new-password" } %>
-        <%= f.input :current_password,
-                    hint: "we need your current password to confirm your changes",
-                    required: true,
-                    input_html: { class: 'rounded-pill form-control-lg', autocomplete: "current-password" } %>
+          <%= f.input :password,
+                      hint: "Ingresa tu contraseña nueva, sólo si la quieres cambiar",
+                      required: false,
+                      input_html: { class: 'rounded-pill form-control-lg', autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      hint: "Vuelve a ingresar tu nueva contraseña",
+                      required: false,
+                      input_html: { class: 'rounded-pill form-control-lg', autocomplete: "new-password" } %>
+          <%= f.input :current_password,
+                      hint: "Ingresa tu contraseña para guardar los cambios",
+                      required: true,
+                      input_html: { class: 'rounded-pill form-control-lg', autocomplete: "current-password" } %>
+        </div>
+
+        <div class="form-actions d-grid gap-2">
+          <%= f.button :submit, "Update", class: 'btn btn-primary form-control-lg rounded-pill' %>
+        </div>
+      <% end %>
+      <p>
+      <p>Cancelar cuenta:
+      <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <%= link_to "Back", :back %>
+    </div>
+
+    <div class="col-sm">
+      <% @user = User.where(id: current_user.id).all%>
+      <% @markers = @user.geocoded.map do |user|%>
+        <% {lat: user.latitude, lng: user.longitude}%>
+      <% end %>
+      <div id="map"
+            style="width: 90%; height: 300px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>">
       </div>
-
-      <div class="form-actions d-grid gap-2">
-        <%= f.button :submit, "Update", class: 'btn btn-primary form-control-lg rounded-pill' %>
-      </div>
-    <% end %>
-  </div>
-  <div class="col-6">
-    <% @user = User.where(id: current_user.id).all%>
-    <% @markers = @user.geocoded.map do |user|%>
-      <% {lat: user.latitude, lng: user.longitude}%>
-    <% end %>
-    <div id="map"
-          style="width: 100%; height: 600px;"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY']%>">
     </div>
   </div>
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
-</div>
+  <p></p>
 </div>
