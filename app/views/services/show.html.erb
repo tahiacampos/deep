@@ -48,8 +48,7 @@
   </div>
 </div>
 <p></p>
-<div class= "container">
-</div>
+
 <div class="container">
 <p>Más publicaciones del vendedor</p>
 <!-- CONTENEDOR CARRUSEL --> 
@@ -59,19 +58,9 @@
       <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner carousel2" role="listbox">
           <!-- EMPIEZAN LOS CAROUSELS -->  
-          <div class="carousel-item active">
-            <div class="d-block col-3 img-fluid">
-              <div class="card">
-                <div class="card-img">
-                    <img src="https://via.placeholder.com/500x400/e66?text=2" class="img-fluid">
-                </div>
-                <div class="card-img-overlay">Slide 1</div>
-              </div>
-            </div>
-          </div>
- 
-          <% @mas_servicios.each do |servicio| %>
-            <div class="carousel-item">
+
+          <% @mas_servicios.each_with_index do |servicio, index| %>
+            <div class="carousel-item <%= "active" if index.zero? %>">
               <div class="d-block col-3 img-fluid">
                 <div class="card">
                   
