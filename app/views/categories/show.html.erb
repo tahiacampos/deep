@@ -60,7 +60,7 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <% if service.photo.attached? %>
-              <%= cl_image_tag(service.photo.key, height:200, width:253)%>
+              <%= cl_image_tag(service.photo.key, height:200, width:200, crop: :fill)%>
                <% else %>
                 <img src="https://i.imgur.com/WyxbTOS.png" class="img-thumbnail" alt="Servicio <%= service.title %>">
               <% end %>

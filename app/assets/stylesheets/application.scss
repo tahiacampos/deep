@@ -34,6 +34,7 @@ h1{
 }
 
 .navbar{
+  justify-content: space-between;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
     border-bottom: 4px solid #ffba00;
@@ -64,6 +65,11 @@ h1{
   }
 
   .footer {
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    height: 20px;
+    width: 100%;
     background: #121213;
     justify-content: space-between;
     display: flex;
