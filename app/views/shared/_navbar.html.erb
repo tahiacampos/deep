@@ -1,35 +1,20 @@
 <% @user = current_user %>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container-xl">
-    <%= link_to root_path, class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand mr-auto" do %>
       <%= image_tag("https://i.imgur.com/CrNCQjv.png", class: "img-nav")  %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
-    
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- ITEMS MENU -->
-        <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Sobre</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
-              </li>
-        </ul>
-        <!-- / ITEMS MENU -->    
+  
   <!-- inicio search -->
-      <form novalidate="novalidate" class="simple_form search d-flex mr-5 my-2" action="/search" accept-charset="UTF-8" method="get">
+      <form novalidate="novalidate" class="simple_form search d-flex mx-auto my-2" action="/search" accept-charset="UTF-8" method="get">
         <div class="search-form-control form-group my-auto d-flex">
           <div class="input-group">
-              <input class="form-control string required pl-3 rounded-pill" type="text" placeholder="Busca un servicio" id="search_form" name="q" />
+              <input class="form-control string required pl-3 rounded-pill" type="text" placeholder="Buscador de servicios" id="search_form" name="q" />
               <!--<button name="button" type="submit" class="btn btn-flat2">
                 <a class="btn btn-flat2" href="#">Buscar</a>
               </button>-->
@@ -37,11 +22,11 @@
         </div>
       </form><!-- fin search -->
 
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
           <%# <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> %>
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-black dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= @user.email %>
               <% if @user.photo.attached? %>
                 <%= cl_image_tag @user.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
