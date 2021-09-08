@@ -1,0 +1,9 @@
+
+
+production:
+  cloud_name: "deepsoluciones"
+  api_key: "551436677436446"
+  api_secret: "GjlE7CPYgHUCHBHzQa3aSq4TMX4"
+  secure: true
+  cdn_subdomain: true
+
