@@ -34,6 +34,7 @@ h1{
 }
 
 .navbar{
+  justify-content: space-between;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
     border-bottom: 4px solid #ffba00;
@@ -64,12 +65,15 @@ h1{
   }
 
   .footer {
-    background: #121213;
-    display: flex;
-    align-items: center;
-    justify-content:last baseline;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
     height: 100px;
     padding: 0px 50px;
+    background: #121213;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
     color: rgba(253, 253, 253, 0.3);
   }
 
@@ -79,7 +83,7 @@ h1{
   }
 
   .footer-links a {
-    color:white;
+    color:#ffba00;
     opacity: 0.15;
     text-decoration: none;
     font-size: 24px;
@@ -93,4 +97,3 @@ h1{
   .footer .fa-heart {
     color: #ffba00;
   }
-  

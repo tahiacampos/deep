@@ -1,15 +1,10 @@
 
 <div class="container">
-<% if current_user.id != @service.user_id%>
-    <h1>Compra de servicio: </h1>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-
-        </div>
-      </div>
+  <% if current_user.id != @service.user_id%>
+      <h1>Compra de servicio: </h1>
       <div class="container">
         <div class="row">
+
           <div class="col-6">
             <h2 class="text-success"> <%= @service.title %></h2>
             <h4>Estás pagando en DEEP</h4>
@@ -28,13 +23,95 @@
               <%= form.submit 'Pagar' %>
             <% end %>
             <h2></h2>
+
+          <div class="col">
+
+
           </div>
         </div>
-      </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+              <h2 class="text-success"> <%= @service.title %></h2>
+              <h4>Agenda este servicio por:</h4>
+              <p><h3 class="text-success"><%=number_to_currency(@service.price, :precision => 0, :delimiter => ".")%></h3></p>
+              <%= cl_image_tag(@service.photo.key,width:300)%>
+            </div>
+            <div class="col-6">
+<!-- Seleccionar fecha -->
+            <div class="row g-8">
+              <p>Fechas disponibles:</p>
+              <div class="col-md">
+                <div class="form-floating">
+                  <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                    <option selected></option>
+                    <option value="1">Mañana</option>
+                    <option value="2">Tarde</option>
+                  </select>
+                  <label for="floatingInputGrid">Horario</label>
+                </div>
+              </div>
+              <div class="col-md">
+                <div class="form-floating">
+                  <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                    <option selected></option>
+                    <option value="1">6</option>
+                    <option value="2">3</option>
+                    <option value="3">15</option>
+                    <option value="3">21</option>
+                    <option value="3">24</option>
+                    <option value="3">30</option>
 
-  </div>
-<% else %>
-    <h1> ¡No puedes comprar tus propios servicios! </h1>
+                  </select>
+                  <label for="floatingSelectGrid">Día</label>
+                </div>
+              </div>
+                <div class="col-md">
+                <div class="form-floating">
+                  <select class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                    <option selected></option>
+                    <option value="1">Septiembre</option>
+                    <option value="2">Octubre</option>
+                  </select>
+                  <label for="floatingSelectGrid">Mes</label>
+                </div>
+              </div>
+            </div>
+<!-- termino seleccion de fecha -->
+<br>
+<!-- comentarios -->
+      <div class="row g-8">
+        <div class="col-md">
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Agregar comentarios</label>
+          </div>
+        </div>
+        <div class="col-md">
+          <p></p>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+              A domicilio
+            </label>
+          </div>
+        </div>
+<!-- terminan comentarios -->
+          <p></p>
+              <%= simple_form_for [@service, @book] do |form| %>
+                <%=form.input :payment_method%><%=number_to_currency(@service.price, :precision => 0, :delimiter => ".")%>
+                <%=cl_image_tag("webpay_zlggca.jpg")%>
+                <button class="btn btn-primary" type="submit">
+                Pagar </button>
+              <% end %>
+              <h2></h2>
+            </div>
+          </div>
+        </div>
+      <br>
+    </div>
+  <% else %>
+      <h1> ¡No puedes comprar tus propios servicios! </h1>
 
-<% end %>
+  <% end %>
 </div>

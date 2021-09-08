@@ -48,7 +48,9 @@
   color: #292929;
 }
 
-.btn-secondary{
-  background-color: #292929;
-  border: none
+.btn-black {
+  color: white;
+}
+.btn-black:hover {
+  color: #d3d3d2;
 }

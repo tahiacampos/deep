@@ -42,15 +42,15 @@
     </div><!-- / SIDEBAR -->
  
   <% if @categoria.services.empty? %>
-    <div class="col-lg-9">
-       <div class="jumbotron bg-warning">
-        <h1 class="display-4">Sin Servicios</h1>
+    <div class="col-sm">
+       <div class="jumbotron bg-gradient-warning">
+        <h3 class="display-6">Sin Servicios</h3>
         <p class="lead">Puedes ya partir creando tu primer anuncio.</p>
         <hr class="my-4">
         <%= link_to "Publica", new_service_path, class: "btn btn-primary btn-lg" %>
       </div>
     </div>
-    
+
     <% else %>
 
     <div class="col-lg-9"><!-- SERVICES -->
@@ -60,7 +60,7 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
               <% if service.photo.attached? %>
-              <%= cl_image_tag(service.photo.key, height:200, width:253)%>
+              <%= cl_image_tag(service.photo.key, height:200, width:200, crop: :fill)%>
                <% else %>
                 <img src="https://i.imgur.com/WyxbTOS.png" class="img-thumbnail" alt="Servicio <%= service.title %>">
               <% end %>
