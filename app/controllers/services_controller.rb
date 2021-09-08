@@ -68,6 +68,7 @@ class ServicesController < ApplicationController
   def destroy
     @service = Service.find(params[:id])
     @service.destroy
+    redirect_to root_path
 
     # no need for app/views/restaurants/destroy.html.erb
 
