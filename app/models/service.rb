@@ -2,6 +2,7 @@ class Service < ApplicationRecord
   belongs_to :category, optional: true
   belongs_to :user
   has_one_attached :photo
+  has_many :bookings, dependent: :destroy
   # CATEGORIES = Category.all
   validates :title, :description, presence: :true
   # validates :category, inclusion: { in: CATEGORIES }

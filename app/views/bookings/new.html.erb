@@ -1,20 +1,18 @@
 
 <div class="container">
   <% if current_user.id != @service.user_id%>
-      <h1>Compra de servicio: </h1>
-      <div class="container">
-        <div class="row">
-          <div class="col">
 
-          </div>
-        </div>
         <div class="container">
           <div class="row">
             <div class="col-6">
               <h2 class="text-success"> <%= @service.title %></h2>
               <h4>Agenda este servicio por:</h4>
               <p><h3 class="text-success"><%=number_to_currency(@service.price, :precision => 0, :delimiter => ".")%></h3></p>
-              <%= cl_image_tag(@service.photo.key,width:300)%>
+              <% if @service.photo.attached? %>
+                <%= cl_image_tag(@service.photo.key,width:300)%>
+              <% else %>
+                <img src="https://i.imgur.com/WyxbTOS.png" class="img-thumbnail" alt="Servicio <%= @service.title %>">
+              <% end %>
             </div>
             <div class="col-6">
 <!-- Seleccionar fecha -->

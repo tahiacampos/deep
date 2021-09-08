@@ -11,11 +11,13 @@
   <div class="row">
     <% @services.each do |service|%>
       <div class="col-4">
-      <% if service.photo.attached? %>
-        <%= cl_image_tag(service.photo.key, width: 300, height: 200, crop: :fill) %>
+<<<<<<< HEAD
+        <% if service.photo.attached? %>
+          <%= cl_image_tag(service.photo.key,width:300)%>
         <% else %>
-        <img src="https://i.imgur.com/WyxbTOS.png" class="img-thumbnail" alt="Servicio <%= service.title %>">
-      <% end %>
+          <img src="https://i.imgur.com/WyxbTOS.png" class="img-thumbnail" alt="Servicio <%= service.title %>">
+        <% end %>
+
       </div>
       <div class="col-5">
         <p><small>#<%= service.id %> </small></p>
