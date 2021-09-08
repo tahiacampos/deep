@@ -59,16 +59,29 @@
 <!-- termino seleccion de fecha -->
 <br>
 <!-- comentarios -->
+      <div class="row g-8">
+        <div class="col-md">
           <div class="form-floating">
             <textarea class="form-control" placeholder="" id="floatingTextarea"></textarea>
             <label for="floatingTextarea">Agregar comentarios</label>
           </div>
+        </div>
+        <div class="col-md">
+          <p></p>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+            <label class="form-check-label" for="flexCheckIndeterminate">
+              A domicilio
+            </label>
+          </div>
+        </div>
 <!-- terminan comentarios -->
-<br>
+          <p></p>
               <%= simple_form_for [@service, @book] do |form| %>
                 <%=form.input :payment_method%><%=number_to_currency(@service.price, :precision => 0, :delimiter => ".")%>
                 <%=cl_image_tag("webpay_zlggca.jpg")%>
-                <%= form.submit 'Pagar' %>
+                <button class="btn btn-primary" type="submit">
+                Pagar </button>
               <% end %>
               <h2></h2>
             </div>

@@ -3,9 +3,6 @@
     <div class="col-4">
       Mis compras
     </div>
-    <div class="col-2">
-      <%= link_to "Publicar", new_service_path, class: "btn btn-primary" %>
-    </div>
   </div>
   <hr>
   <div class="row">
@@ -27,6 +24,14 @@
             <p><%= number_to_currency(@busca_compra.price, :precision => 0, :delimiter => ".") %> </p>
           </div>
           
+          <div class="dropdown col-1 align-self-center">
+            <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item"> <%= "Calificar"%>  </a></li>
+              <li><a class="dropdown-item"> <%= "Detalle de compra"%>  </a></li>
+            </ul>
+          </div>
           
           <hr>
           
