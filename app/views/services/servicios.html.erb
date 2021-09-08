@@ -41,6 +41,7 @@
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <li><a class="dropdown-item"> <%= link_to "Modificar", edit_service_path(service.id)%>  </a></li>
         <li><a class="dropdown-item"> <%= link_to "Ver publicación", service_path(service.id)%>  </a></li>
+        <li><a class="dropdown-item"> <td><%= link_to 'Eliminar', { :action => :destroy, :id => service.id }, :method => :delete, :data => { :confirm => 'Eliminar por completo?' } %></td></a></li>
       </ul>
     </div>
     <hr>
